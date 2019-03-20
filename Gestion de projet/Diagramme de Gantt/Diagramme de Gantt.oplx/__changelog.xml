@@ -74,6 +74,18 @@
     <change idref="t2" attribute="effort" type="real" from="144000" to="1123200" resolved="yes"/>
     <change idref="t10" attribute="effort" type="real" from="148500" to="1123200" resolved="yes"/>
   </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-03-20T14:24:56.456Z" timestamp="2019-03-20T14:24:56.456Z">
+    <change idref="t23" to="t1" to-position="4" resolved="yes">
+      <change idref="t23" attribute="effort" type="real" from="28800" to="111600"/>
+      <change idref="t23" attribute="internalAssignments" type="string" from="" to="3; 4; 5; 6"/>
+      <change idref="t23" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-22T07:00:00.000Z"/>
+      <change idref="t23" attribute="title" type="string" to="Grille des freins"/>
+    </change>
+    <change idref="t8" attribute="title" type="string" from="Grille des freins" to="Diagramme de classe" resolved="yes"/>
+    <change idref="t13" attribute="effort" type="real" from="90000" to="57600" resolved="yes"/>
+    <change idref="t14" attribute="effort" type="real" from="86400" to="55800" resolved="yes"/>
+    <change idref="t14" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-21T12:00:00.000Z" to="2019-03-21T07:15:00.000Z" resolved="yes"/>
+  </task-change-set>
   <resource-change-set user="Quentin Duléry" date="2019-03-20T12:57:57.051Z" timestamp="2019-03-20T12:57:57.051Z">
     <change idref="r2" to="r-1" to-position="1" resolved="yes">
       <change idref="r2" attribute="name" type="string" from="" to="DULERY Quentin"/>

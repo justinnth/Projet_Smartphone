@@ -94,6 +94,7 @@
     <child-task idref="t6"/>
     <child-task idref="t7"/>
     <child-task idref="t8"/>
+    <child-task idref="t23"/>
     <child-task idref="t9"/>
   </task>
   <task id="t2">
@@ -128,7 +129,7 @@
     <start-no-earlier-than>2019-03-20T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t8">
-    <title>Grille des freins</title>
+    <title>Diagramme de classe</title>
     <effort>86400</effort>
     <start-constraint-date>2019-03-20T07:00:00.000Z</start-constraint-date>
     <assignment idref="r4"/>
@@ -153,7 +154,7 @@
   </task>
   <task id="t13">
     <title>Maquettes</title>
-    <effort>90000</effort>
+    <effort>57600</effort>
     <start-constraint-date>2019-03-20T07:00:00.000Z</start-constraint-date>
     <assignment idref="r5"/>
     <assignment idref="r4"/>
@@ -161,11 +162,21 @@
   </task>
   <task id="t14">
     <title>Description maquette</title>
-    <effort>86400</effort>
-    <start-constraint-date>2019-03-21T12:00:00.000Z</start-constraint-date>
+    <effort>55800</effort>
+    <start-constraint-date>2019-03-21T07:15:00.000Z</start-constraint-date>
     <assignment idref="r6"/>
     <assignment idref="r3"/>
-    <start-no-earlier-than>2019-03-21T12:00:00.000Z</start-no-earlier-than>
+    <start-no-earlier-than>2019-03-21T07:15:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t23">
+    <title>Grille des freins</title>
+    <effort>111600</effort>
+    <start-constraint-date>2019-03-22T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <assignment idref="r4"/>
+    <assignment idref="r5"/>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-03-22T07:00:00.000Z</start-no-earlier-than>
   </task>
   <critical-path root="-1" enabled="false" resources="false">
     <color space="srgb" r="1" g="0.5" b="0.5"/>
