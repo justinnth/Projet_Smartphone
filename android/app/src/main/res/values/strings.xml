@@ -1,14 +1,10 @@
 <resources>
     <string name="app_name">Drone Controller</string>
 
-    <!-- VUE 1 -->
-    <string name="button1">Vue 1</string>
-    <string name="button2">Vue 2</string>
 
-
-    <!-- VUE 2 -->
-
-    <!-- VUE 3 -->
+    <string name="toView1">Vue 1</string>
+    <string name="toView2">Vue 2</string>
+    <string name="toView3">Vue 3</string>
 
 
 </resources>

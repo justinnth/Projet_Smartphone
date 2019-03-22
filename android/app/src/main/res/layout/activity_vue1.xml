@@ -10,26 +10,27 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="16dp">
         <com.google.android.gms.maps.MapView
                 android:layout_width="match_parent"
-                android:layout_height="343dp" android:id="@+id/mapView"/>
+                android:layout_height="477dp" android:id="@+id/mapView"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content" android:paddingLeft="20dp" android:paddingRight="20dp">
             <Button
-                    android:text="@string/button2"
+                    android:text="@string/toView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/toView2" android:layout_weight="1"/>
             <Button
-                    android:text="@string/button1"
+                    android:text="@string/toView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/toView3" android:layout_weight="1"/>
         </LinearLayout>
         <TextView
-                android:layout_width="227dp"
-                android:layout_height="87dp" android:id="@+id/vitesse"/>
+                android:layout_width="200dp"
+                android:layout_height="60dp" android:id="@+id/vitesse"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:id="@+id/infosDiverses"/>
