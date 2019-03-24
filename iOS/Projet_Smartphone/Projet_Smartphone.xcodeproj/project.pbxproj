@@ -13,6 +13,10 @@
 		8CCA87412247F03C00E1C708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCA873F2247F03C00E1C708 /* Main.storyboard */; };
 		8CCA87432247F03D00E1C708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCA87422247F03D00E1C708 /* Assets.xcassets */; };
 		8CCA87462247F03D00E1C708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCA87442247F03D00E1C708 /* LaunchScreen.storyboard */; };
+		8CCA874F2247F2DF00E1C708 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCA874E2247F2DF00E1C708 /* UIKit.framework */; };
+		8CCA87512247F2E400E1C708 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCA87502247F2E400E1C708 /* MapKit.framework */; };
+		8CCA87532247F2F600E1C708 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCA87522247F2F500E1C708 /* CoreGraphics.framework */; };
+		8CCA87552247F2FE00E1C708 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCA87542247F2FE00E1C708 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		8CCA87422247F03D00E1C708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CCA87452247F03D00E1C708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CCA87472247F03D00E1C708 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCA874E2247F2DF00E1C708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8CCA87502247F2E400E1C708 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8CCA87522247F2F500E1C708 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8CCA87542247F2FE00E1C708 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCA87552247F2FE00E1C708 /* Foundation.framework in Frameworks */,
+				8CCA87532247F2F600E1C708 /* CoreGraphics.framework in Frameworks */,
+				8CCA87512247F2E400E1C708 /* MapKit.framework in Frameworks */,
+				8CCA874F2247F2DF00E1C708 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +54,7 @@
 			children = (
 				8CCA87382247F03B00E1C708 /* Projet_Smartphone */,
 				8CCA87372247F03B00E1C708 /* Products */,
+				8CCA874D2247F2DF00E1C708 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +78,17 @@
 				8CCA87472247F03D00E1C708 /* Info.plist */,
 			);
 			path = Projet_Smartphone;
+			sourceTree = "<group>";
+		};
+		8CCA874D2247F2DF00E1C708 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CCA87542247F2FE00E1C708 /* Foundation.framework */,
+				8CCA87522247F2F500E1C708 /* CoreGraphics.framework */,
+				8CCA87502247F2E400E1C708 /* MapKit.framework */,
+				8CCA874E2247F2DF00E1C708 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
