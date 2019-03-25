@@ -7,21 +7,12 @@ import android.content.pm.ActivityInfo;
 import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallback {
-
-    private MapView mapView;
-    private VideoView videoView;
-    private Button toView1;
-    private Button toView3;
-    private GoogleMap gmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +20,14 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_vue2);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-
-        this.videoView = findViewById(R.id.videoView);
-        this.toView1 = findViewById(R.id.toView1);
-        this.toView3 = findViewById(R.id.toView3);
+        Button toView1 = (Button) findViewById(R.id.toView1);
+        Button toView3 = (Button) findViewById(R.id.toView3);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView2);
 
         mapFragment.getMapAsync(this);
 
-        this.toView1.setOnClickListener(new View.OnClickListener() {
+        toView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Vue2Activity.this, Vue1Activity.class);
@@ -46,7 +35,8 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
                 finish();
             }
         });
-        this.toView3.setOnClickListener(new View.OnClickListener() {
+
+        toView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Vue2Activity.this, Vue3Activity.class);
@@ -58,6 +48,9 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        this.gmap = map;
+        GoogleMap gmap = map;
+
+        LatLng loc = new LatLng(46.1425159,-1.1444612);
+        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }

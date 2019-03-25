@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -27,10 +24,10 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue1);
 
-        this.toView2 = findViewById(R.id.toView2);
-        this.toView3 = findViewById(R.id.toView3);
-        this.vitesse = findViewById(R.id.vitesse);
-        this.infosDiverses = findViewById(R.id.infosDiverses);
+        this.toView2 = (Button) findViewById(R.id.toView2);
+        this.toView3 = (Button) findViewById(R.id.toView3);
+        this.vitesse = (TextView) findViewById(R.id.vitesse);
+        this.infosDiverses = (TextView) findViewById(R.id.infosDiverses);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView);
 
@@ -58,5 +55,8 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
+
+        LatLng loc = new LatLng(46.1425159,-1.1444612);
+        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }

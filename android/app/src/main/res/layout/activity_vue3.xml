@@ -8,18 +8,53 @@
         tools:context=".Vue3Activity">
 
     <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="395dp"
-            android:layout_height="98dp" tools:layout_editor_absoluteY="8dp" tools:layout_editor_absoluteX="8dp">
-        <Button
-                android:text="@string/toView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="255dp"
-                tools:layout_editor_absoluteX="50dp" android:id="@+id/toView1" android:layout_weight="1"/>
-        <Button
-                android:text="@string/toView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:layout_editor_absoluteY="16dp"
-                tools:layout_editor_absoluteX="16dp" android:id="@+id/toView2" android:layout_weight="1"/>
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <fragment
+                android:id="@+id/mapView3"
+                android:layout_width="match_parent"
+                android:layout_height="246dp"
+                class="com.google.android.gms.maps.SupportMapFragment" android:layout_weight="1"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" tools:layout_editor_absoluteY="8dp"
+                tools:layout_editor_absoluteX="8dp">
+            <Button
+                    android:text="@string/toView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="255dp"
+                    tools:layout_editor_absoluteX="50dp" android:id="@+id/toView1" android:layout_weight="1"/>
+            <Button
+                    android:text="@string/toView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="16dp"
+                    tools:layout_editor_absoluteX="16dp" android:id="@+id/toView2" android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" android:layout_weight="1">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="149dp"
+                    android:layout_height="match_parent" android:layout_weight="1">
+                <TextView
+                        android:text="Vitesse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"/>
+                <TextView
+                        android:text="Coords du bateau"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_weight="1"/>
+            </LinearLayout>
+            <TextView
+                    android:text="Coords du point placé"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:id="@+id/textView3" android:layout_weight="1"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
