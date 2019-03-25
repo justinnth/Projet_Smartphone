@@ -1,15 +1,16 @@
 package fr.univ_lr.drone_controller;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.pm.ActivityInfo;
 import android.view.View;
 import android.widget.Button;
-import android.widget.VideoView;
-import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallback {
@@ -48,9 +49,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        GoogleMap gmap = map;
-
         LatLng loc = new LatLng(46.1425159,-1.1444612);
-        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }

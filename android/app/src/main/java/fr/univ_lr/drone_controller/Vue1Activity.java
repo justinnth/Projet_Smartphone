@@ -8,16 +8,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private MapView mapView;
     private Button toView2;
     private Button toView3;
     private TextView vitesse;
     private TextView infosDiverses;
-    private GoogleMap gmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +51,7 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        this.gmap = map;
-
         LatLng loc = new LatLng(46.1425159,-1.1444612);
-        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }

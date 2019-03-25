@@ -47,9 +47,8 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        GoogleMap gmap = map;
 
         LatLng loc = new LatLng(46.1425159,-1.1444612);
-        gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }
