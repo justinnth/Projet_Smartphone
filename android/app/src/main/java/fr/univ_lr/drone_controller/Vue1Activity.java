@@ -50,7 +50,7 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
                 finish();
             }
         });
-        Log.w("ok","ok");
+        
         nmeaParse("tramesNMEA.txt");
     }
 

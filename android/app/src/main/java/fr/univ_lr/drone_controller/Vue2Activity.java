@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -23,6 +24,8 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         Button toView1 = (Button) findViewById(R.id.toView1);
         Button toView3 = (Button) findViewById(R.id.toView3);
+        Button home = (Button) findViewById(R.id.buttonHome);
+        Button emergency = (Button) findViewById(R.id.buttonEmergency);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView2);
 
@@ -45,6 +48,21 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
                 finish();
             }
         });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Home button pushed", Toast.LENGTH_SHORT); toast.show();
+            }
+        });
+
+        emergency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "Emergency button pushed", Toast.LENGTH_SHORT); toast.show();
+            }
+        });
+
     }
 
     @Override
