@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        tools:context=".Vue1Activity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".Vue1Activity">
 
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/mapView"
-            class="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_alignParentTop="true"
-            android:layout_above="@+id/Linear"
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapView"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--<com.google.android.gms.maps.MapView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <!--<com.google.android.gms.maps.MapView
-                android:layout_width="match_parent"
-                android:layout_height="477dp" android:id="@+id/mapView"/>-->
-        <LinearLayout
+            android:layout_height="477dp" android:id="@+id/mapView"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/Linear"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_above="@+id/vitesse"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/toView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/Linear"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:layout_above="@+id/vitesse"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_weight="1"
+            android:text="@string/toView2" />
 
-            <Button
-                android:id="@+id/toView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/toView2" />
-
-            <Button
-                android:id="@+id/toView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/toView3" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/vitesse"
+        <Button
+            android:id="@+id/toView3"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_above="@+id/infosDiverses"
-            android:text="vitesse" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/toView3" />
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/infosDiverses"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:text="infos diverses" />
+    <TextView
+        android:id="@+id/vitesse"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/infosDiverses"
+        android:text="vitesse" />
+
+    <TextView
+        android:id="@+id/infosDiverses"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:text="infos diverses" />
 
 </RelativeLayout>

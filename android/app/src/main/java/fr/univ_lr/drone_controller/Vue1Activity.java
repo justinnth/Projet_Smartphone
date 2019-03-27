@@ -6,23 +6,34 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.*;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallback {
+
+    private Socket socket;
+
+    private static final int SERVERPORT = 55555;
+    private static final String SERVER_IP = "10.13.29.233";
 
     private Button toView2;
     private Button toView3;
     private TextView vitesse;
     private TextView infosDiverses;
+    private GoogleMap gmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue1);
+        new Thread(new ClientThread()).start();
 
         this.toView2 = (Button) findViewById(R.id.toView2);
         this.toView3 = (Button) findViewById(R.id.toView3);
@@ -56,6 +67,8 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
+        gmap = map;
+
         LatLng loc = new LatLng(46.1425159,-1.1444612);
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
@@ -73,6 +86,24 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    class ClientThread implements Runnable {
+
+        @Override
+        public void run() {
+
+            try {
+                InetAddress serverAddr = InetAddress.getByName(SERVER_IP);
+                socket = new Socket(serverAddr, SERVERPORT);
+
+            } catch (UnknownHostException e1) {
+                e1.printStackTrace();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
         }
     }
 }
