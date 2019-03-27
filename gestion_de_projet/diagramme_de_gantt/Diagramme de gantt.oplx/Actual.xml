@@ -84,6 +84,7 @@
   <task id="t-1">
     <type>group</type>
     <child-task idref="t1"/>
+    <child-task idref="t51"/>
     <child-task idref="t2"/>
     <child-task idref="t10"/>
   </task>
@@ -99,11 +100,9 @@
   </task>
   <task id="t2">
     <title>Développement Android</title>
-    <effort>1123200</effort>
+    <type>group</type>
     <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
-    <assignment idref="r3"/>
-    <assignment idref="r6"/>
-    <assignment idref="r1"/>
+    <child-task idref="t48"/>
     <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t5">
@@ -145,11 +144,9 @@
   </task>
   <task id="t10">
     <title>Développement IOS</title>
-    <effort>1123200</effort>
+    <type>group</type>
     <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
-    <assignment idref="r5"/>
-    <assignment idref="r4"/>
-    <assignment idref="r2"/>
+    <child-task idref="t68"/>
     <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t13">
@@ -177,6 +174,229 @@
     <assignment idref="r5"/>
     <assignment idref="r6"/>
     <start-no-earlier-than>2019-03-22T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t27">
+    <title>Vue 1</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-22T15:45:00.000Z</start-constraint-date>
+    <child-task idref="t36"/>
+    <child-task idref="t37"/>
+    <child-task idref="t38"/>
+    <start-no-earlier-than>2019-03-22T15:45:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t33">
+    <title>Vue 2</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t41"/>
+    <child-task idref="t42"/>
+    <child-task idref="t43"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t34">
+    <title>Vue 3</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t44"/>
+    <child-task idref="t45"/>
+    <child-task idref="t46"/>
+    <child-task idref="t47"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t36">
+    <title>Google Maps</title>
+    <effort>27000</effort>
+    <start-constraint-date>2019-03-25T07:15:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <start-no-earlier-than>2019-03-25T07:15:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t37">
+    <title>Boutons pour changer de vue</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-26T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <start-no-earlier-than>2019-03-26T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t38">
+    <title>Récupérations données NMEA</title>
+    <effort>86400</effort>
+    <start-constraint-date>2019-03-27T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <start-no-earlier-than>2019-03-27T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t41">
+    <title>Google Maps</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-22T15:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-03-22T15:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t42">
+    <title>Boutons pour changer de vue</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-26T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-03-26T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t43">
+    <title>Boutons Home &amp; Urgence</title>
+    <effort>86400</effort>
+    <start-constraint-date>2019-03-27T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-03-27T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t44">
+    <title>Google Maps</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t45">
+    <title>Boutons changer de vue</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-26T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-26T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t46">
+    <title>Positionner waypoints et les afficher</title>
+    <effort>43200</effort>
+    <start-constraint-date>2019-03-27T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-27T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t47">
+    <title>Définir une vitesse entre chaque waypoints</title>
+    <effort>43200</effort>
+    <start-constraint-date>2019-03-28T12:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-28T12:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t48">
+    <title>Dépot 2</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t27"/>
+    <child-task idref="t33"/>
+    <child-task idref="t34"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t51">
+    <title>Méthode Scrum</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t53"/>
+    <child-task idref="t54"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t53">
+    <title>Dépot 2</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t56"/>
+    <child-task idref="t57"/>
+    <child-task idref="t58"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t54">
+    <title>Dépot 3</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t59"/>
+    <child-task idref="t60"/>
+    <child-task idref="t61"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t56">
+    <title>Définir tâches</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t57">
+    <title>Répartir tâches</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t58">
+    <title>Mettre à jour documents</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t59">
+    <title>Définir tâches</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t60">
+    <title>Répartir tâches</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t61">
+    <title>Mettre à jour documents</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-03-29T15:45:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-03-29T15:45:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t68">
+    <title>Dépot 2</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t73"/>
+    <child-task idref="t69"/>
+    <child-task idref="t70"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t69">
+    <title>Vue 2</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t70">
+    <title>Vue 3</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t73">
+    <title>Vue 1</title>
+    <type>group</type>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <child-task idref="t74"/>
+    <child-task idref="t77"/>
+    <child-task idref="t78"/>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t74">
+    <title>Google Maps</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t77">
+    <title>Boutons pour changer de vue</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-26T07:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-03-26T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t78">
+    <title>Récupérations données NMEA</title>
+    <effort>86400</effort>
+    <start-constraint-date>2019-03-27T07:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2019-03-27T07:00:00.000Z</start-no-earlier-than>
   </task>
   <critical-path root="-1" enabled="false" resources="false">
     <color space="srgb" r="1" g="0.5" b="0.5"/>
