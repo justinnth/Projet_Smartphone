@@ -259,4 +259,73 @@
       <change idref="t78" attribute="title" type="string" to="Récupérations données NMEA"/>
     </change>
   </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-03-27T09:53:26.384Z" timestamp="2019-03-27T09:53:26.384Z">
+    <change idref="t74" attribute="internalAssignments" type="string" from="" to="4" resolved="yes"/>
+    <change idref="t77" attribute="internalAssignments" type="string" from="" to="4" resolved="yes"/>
+    <change idref="t78" attribute="internalAssignments" type="string" from="" to="4" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-03-27T09:58:25.302Z" timestamp="2019-03-27T09:58:25.302Z">
+    <change idref="t69" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t69" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
+    <change idref="t69" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
+    <change idref="t69" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
+    <change idref="t69" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
+    <change idref="t69" attribute="staticCost" type="real" from="0" resolved="yes"/>
+    <change idref="t69" attribute="effort" type="real" from="28800" resolved="yes"/>
+    <change idref="t69" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
+    <change idref="t69" attribute="scheduleType" type="real" from="0" resolved="yes"/>
+    <change idref="t69" attribute="internalAssignments" type="string" from="" resolved="yes"/>
+    <change idref="t69" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
+    <change idref="t69" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
+    <change idref="t79" to="t69" to-position="0" resolved="yes">
+      <change idref="t79" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t79" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
+      <change idref="t79" attribute="title" type="string" to="Google Maps"/>
+    </change>
+    <change idref="t80" to="t69" to-position="1" resolved="yes">
+      <change idref="t80" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t80" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
+      <change idref="t80" attribute="title" type="string" to="Boutons changer de vue"/>
+    </change>
+    <change idref="t81" to="t69" to-position="2" resolved="yes">
+      <change idref="t81" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t81" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t81" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
+      <change idref="t81" attribute="title" type="string" to="Boutons Home &amp; Urgence"/>
+    </change>
+    <change idref="t70" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t70" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
+    <change idref="t70" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
+    <change idref="t70" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
+    <change idref="t70" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
+    <change idref="t70" attribute="staticCost" type="real" from="0" resolved="yes"/>
+    <change idref="t70" attribute="effort" type="real" from="28800" resolved="yes"/>
+    <change idref="t70" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
+    <change idref="t70" attribute="scheduleType" type="real" from="0" resolved="yes"/>
+    <change idref="t70" attribute="internalAssignments" type="string" from="" resolved="yes"/>
+    <change idref="t70" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
+    <change idref="t70" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
+    <change idref="t82" to="t70" to-position="0" resolved="yes">
+      <change idref="t82" attribute="internalAssignments" type="string" from="" to="5"/>
+      <change idref="t82" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
+      <change idref="t82" attribute="title" type="string" to="Google Maps"/>
+    </change>
+    <change idref="t83" to="t70" to-position="1" resolved="yes">
+      <change idref="t83" attribute="internalAssignments" type="string" from="" to="5"/>
+      <change idref="t83" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
+      <change idref="t83" attribute="title" type="string" to="Boutons changer de vue"/>
+    </change>
+    <change idref="t84" to="t70" to-position="2" resolved="yes">
+      <change idref="t84" attribute="effort" type="real" from="28800" to="43200"/>
+      <change idref="t84" attribute="internalAssignments" type="string" from="" to="5"/>
+      <change idref="t84" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
+      <change idref="t84" attribute="title" type="string" to="Positionner waypoints et les afficher"/>
+    </change>
+    <change idref="t85" to="t70" to-position="3" resolved="yes">
+      <change idref="t85" attribute="effort" type="real" from="28800" to="43200"/>
+      <change idref="t85" attribute="internalAssignments" type="string" from="" to="5"/>
+      <change idref="t85" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-28T12:00:00.000Z"/>
+      <change idref="t85" attribute="title" type="string" to="Définir une vitesse entre chaque waypoints"/>
+    </change>
+  </task-change-set>
 </changelog>
