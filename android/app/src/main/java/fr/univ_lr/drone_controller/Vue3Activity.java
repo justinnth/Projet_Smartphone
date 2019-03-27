@@ -15,6 +15,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     private Button toView1;
     private Button toView2;
+    private GoogleMap gmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,9 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
+        this.gmap = map;
 
         LatLng loc = new LatLng(46.1425159,-1.1444612);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }

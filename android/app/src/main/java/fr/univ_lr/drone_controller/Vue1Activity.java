@@ -65,10 +65,10 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
-        gmap = map;
+        this.gmap = map;
 
         LatLng loc = new LatLng(46.1425159,-1.1444612);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 
     class ClientThread implements Runnable {

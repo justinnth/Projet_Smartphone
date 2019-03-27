@@ -16,22 +16,25 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallback {
 
+    private Button toView1, toView3, home, urgence;
+    private GoogleMap gmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vue2);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        Button toView1 = (Button) findViewById(R.id.toView1);
-        Button toView3 = (Button) findViewById(R.id.toView3);
-        Button home = (Button) findViewById(R.id.buttonHome);
-        Button emergency = (Button) findViewById(R.id.buttonEmergency);
+        this.toView1 = (Button) findViewById(R.id.toView1);
+        this.toView3 = (Button) findViewById(R.id.toView3);
+        this.home = (Button) findViewById(R.id.buttonHome);
+        this.urgence = (Button) findViewById(R.id.buttonEmergency);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView2);
 
         mapFragment.getMapAsync(this);
 
-        toView1.setOnClickListener(new View.OnClickListener() {
+        this.toView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Vue2Activity.this, Vue1Activity.class);
@@ -40,7 +43,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        toView3.setOnClickListener(new View.OnClickListener() {
+        this.toView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Vue2Activity.this, Vue3Activity.class);
@@ -49,14 +52,14 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        home.setOnClickListener(new View.OnClickListener() {
+        this.home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Home button pushed", Toast.LENGTH_SHORT); toast.show();
             }
         });
 
-        emergency.setOnClickListener(new View.OnClickListener() {
+        this.urgence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Emergency button pushed", Toast.LENGTH_SHORT); toast.show();
@@ -67,7 +70,9 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapReady(GoogleMap map) {
+        this.gmap = map;
+
         LatLng loc = new LatLng(46.1425159,-1.1444612);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
     }
 }
