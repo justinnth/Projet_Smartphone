@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         switch client.connect(timeout: 10) {
         case .success:
             appendToTextField(string: "Connecté à l'hôte : \(client.address)")
-            if let response = sendRequest(string: "GET / HTTP/1.0\n\n", using: client){
+            if let response = sendRequest(string: "GET / HTTP/1.1\n\n", using: client){
                 appendToTextField(string: "Réponse : \(response)")
             }
         case .failure(let error):

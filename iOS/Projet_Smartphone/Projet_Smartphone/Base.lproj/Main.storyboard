@@ -109,7 +109,7 @@
                                 <rect key="frame" x="16" y="431" width="343" height="43"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="Lmz-Lt-5ml"/>
+                                    <constraint firstAttribute="height" constant="43" id="RTf-fK-zLM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -129,18 +129,18 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="huO-9r-36a" firstAttribute="leading" secondItem="eOW-Kp-6M5" secondAttribute="leading" id="0ce-rh-ICM"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="leading" secondItem="ps0-Uz-A3q" secondAttribute="leading" id="2q3-P9-BbP"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="top" secondItem="EDj-Mn-Vde" secondAttribute="bottom" constant="8" symbolic="YES" id="5YW-h1-rhI"/>
                             <constraint firstAttribute="bottom" secondItem="eOW-Kp-6M5" secondAttribute="bottom" constant="20" symbolic="YES" id="7Re-r7-3Fx"/>
-                            <constraint firstItem="huO-9r-36a" firstAttribute="trailing" secondItem="eOW-Kp-6M5" secondAttribute="trailing" id="Ip6-ck-XGr"/>
-                            <constraint firstItem="EDj-Mn-Vde" firstAttribute="centerX" secondItem="huO-9r-36a" secondAttribute="centerX" id="Liu-sy-qu9"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="trailing" secondItem="ps0-Uz-A3q" secondAttribute="trailing" id="CoN-vl-Pga"/>
                             <constraint firstItem="ps0-Uz-A3q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="amT-sT-wDJ"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="centerX" secondItem="EDj-Mn-Vde" secondAttribute="centerX" id="aqa-fz-Y9b"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="leading" secondItem="eOW-Kp-6M5" secondAttribute="leading" id="dQT-rP-QSi"/>
                             <constraint firstItem="ps0-Uz-A3q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="euQ-lC-xWa"/>
                             <constraint firstItem="EDj-Mn-Vde" firstAttribute="top" secondItem="ps0-Uz-A3q" secondAttribute="bottom" constant="8" symbolic="YES" id="icj-gP-aJY"/>
-                            <constraint firstItem="eOW-Kp-6M5" firstAttribute="top" secondItem="huO-9r-36a" secondAttribute="bottom" constant="8" symbolic="YES" id="kn1-q1-k5I"/>
-                            <constraint firstItem="huO-9r-36a" firstAttribute="top" secondItem="EDj-Mn-Vde" secondAttribute="bottom" constant="8" symbolic="YES" id="p8L-vV-amj"/>
-                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="leading" secondItem="huO-9r-36a" secondAttribute="leading" id="vjf-N9-xgM"/>
+                            <constraint firstItem="eOW-Kp-6M5" firstAttribute="top" secondItem="huO-9r-36a" secondAttribute="bottom" constant="8" symbolic="YES" id="oq0-vG-4hT"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="trailing" secondItem="eOW-Kp-6M5" secondAttribute="trailing" id="x4V-DP-EId"/>
                             <constraint firstItem="ps0-Uz-A3q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="y7n-Du-vly"/>
-                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="trailing" secondItem="huO-9r-36a" secondAttribute="trailing" id="yzy-Qg-Oqm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
