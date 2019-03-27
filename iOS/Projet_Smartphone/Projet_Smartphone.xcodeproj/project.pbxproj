@@ -13,12 +13,12 @@
 		8C42CFF72248D84F004690C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C42CFF62248D84F004690C0 /* Assets.xcassets */; };
 		8C42CFFA2248D84F004690C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C42CFF82248D84F004690C0 /* LaunchScreen.storyboard */; };
 		8C42D0022248DD25004690C0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C42D0012248DD25004690C0 /* MainNavigationController.swift */; };
-		DB4EF254E844960C31C9699A /* Pods_Projet_Smartphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23F37824B916A1753F42493B /* Pods_Projet_Smartphone.framework */; };
+		A47425F70C5997F1F5D427FD /* Pods_Projet_Smartphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CA47ED59E9D79B794E99A0 /* Pods_Projet_Smartphone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23F37824B916A1753F42493B /* Pods_Projet_Smartphone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Projet_Smartphone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E2D77A57147F8E6FA937EBA /* Pods-Projet_Smartphone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet_Smartphone.release.xcconfig"; path = "Target Support Files/Pods-Projet_Smartphone/Pods-Projet_Smartphone.release.xcconfig"; sourceTree = "<group>"; };
+		39CA47ED59E9D79B794E99A0 /* Pods_Projet_Smartphone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Projet_Smartphone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4199649E7D7EB967FDD5918B /* Pods-Projet_Smartphone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet_Smartphone.release.xcconfig"; path = "Target Support Files/Pods-Projet_Smartphone/Pods-Projet_Smartphone.release.xcconfig"; sourceTree = "<group>"; };
 		8C42CFEC2248D84E004690C0 /* Projet_Smartphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projet_Smartphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C42CFEF2248D84E004690C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C42CFF12248D84E004690C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +27,7 @@
 		8C42CFF92248D84F004690C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C42CFFB2248D84F004690C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C42D0012248DD25004690C0 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		CEA4EE5F38B6279F6012A1BF /* Pods-Projet_Smartphone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet_Smartphone.debug.xcconfig"; path = "Target Support Files/Pods-Projet_Smartphone/Pods-Projet_Smartphone.debug.xcconfig"; sourceTree = "<group>"; };
+		E22B45C7C6DFBFB47688EBEC /* Pods-Projet_Smartphone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet_Smartphone.debug.xcconfig"; path = "Target Support Files/Pods-Projet_Smartphone/Pods-Projet_Smartphone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,20 +35,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4EF254E844960C31C9699A /* Pods_Projet_Smartphone.framework in Frameworks */,
+				A47425F70C5997F1F5D427FD /* Pods_Projet_Smartphone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22A295A269CA5A3011EC67AF /* Pods */ = {
+		040702CDEA902102BF84F192 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CEA4EE5F38B6279F6012A1BF /* Pods-Projet_Smartphone.debug.xcconfig */,
-				2E2D77A57147F8E6FA937EBA /* Pods-Projet_Smartphone.release.xcconfig */,
+				E22B45C7C6DFBFB47688EBEC /* Pods-Projet_Smartphone.debug.xcconfig */,
+				4199649E7D7EB967FDD5918B /* Pods-Projet_Smartphone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -57,8 +56,8 @@
 			children = (
 				8C42CFEE2248D84E004690C0 /* Projet_Smartphone */,
 				8C42CFED2248D84E004690C0 /* Products */,
-				22A295A269CA5A3011EC67AF /* Pods */,
-				CCDCC2E306299B7777F1E6C7 /* Frameworks */,
+				040702CDEA902102BF84F192 /* Pods */,
+				FE6391B34048CE04DEC0F023 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,10 +83,10 @@
 			path = Projet_Smartphone;
 			sourceTree = "<group>";
 		};
-		CCDCC2E306299B7777F1E6C7 /* Frameworks */ = {
+		FE6391B34048CE04DEC0F023 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				23F37824B916A1753F42493B /* Pods_Projet_Smartphone.framework */,
+				39CA47ED59E9D79B794E99A0 /* Pods_Projet_Smartphone.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +125,7 @@
 				TargetAttributes = {
 					8C42CFEB2248D84E004690C0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -170,13 +170,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Projet_Smartphone/Pods-Projet_Smartphone-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,7 +358,7 @@
 		};
 		8C42CFFF2248D84F004690C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEA4EE5F38B6279F6012A1BF /* Pods-Projet_Smartphone.debug.xcconfig */;
+			baseConfigurationReference = E22B45C7C6DFBFB47688EBEC /* Pods-Projet_Smartphone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -370,14 +370,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "north.Projet-Smartphone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		8C42D0002248D84F004690C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E2D77A57147F8E6FA937EBA /* Pods-Projet_Smartphone.release.xcconfig */;
+			baseConfigurationReference = 4199649E7D7EB967FDD5918B /* Pods-Projet_Smartphone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,7 +389,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "north.Projet-Smartphone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

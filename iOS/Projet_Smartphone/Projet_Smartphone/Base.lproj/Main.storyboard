@@ -86,9 +86,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="135" translatesAutoresizingMaskIntoConstraints="NO" id="EDj-Mn-Vde">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="135" translatesAutoresizingMaskIntoConstraints="NO" id="EDj-Mn-Vde">
                                 <rect key="frame" x="80" y="393" width="215" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXD-2Q-xhd">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -106,29 +105,49 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Vitesse" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="huO-9r-36a">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Vitesse" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="huO-9r-36a">
                                 <rect key="frame" x="16" y="431" width="343" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Lmz-Lt-5ml"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Coordonnées" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eOW-Kp-6M5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Coordonnées" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eOW-Kp-6M5">
                                 <rect key="frame" x="16" y="482" width="343" height="165"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="H7F-w0-0wp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ps0-Uz-A3q">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ps0-Uz-A3q">
                                 <rect key="frame" x="16" y="75" width="343" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="leading" secondItem="eOW-Kp-6M5" secondAttribute="leading" id="0ce-rh-ICM"/>
+                            <constraint firstAttribute="bottom" secondItem="eOW-Kp-6M5" secondAttribute="bottom" constant="20" symbolic="YES" id="7Re-r7-3Fx"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="trailing" secondItem="eOW-Kp-6M5" secondAttribute="trailing" id="Ip6-ck-XGr"/>
+                            <constraint firstItem="EDj-Mn-Vde" firstAttribute="centerX" secondItem="huO-9r-36a" secondAttribute="centerX" id="Liu-sy-qu9"/>
+                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="amT-sT-wDJ"/>
+                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="euQ-lC-xWa"/>
+                            <constraint firstItem="EDj-Mn-Vde" firstAttribute="top" secondItem="ps0-Uz-A3q" secondAttribute="bottom" constant="8" symbolic="YES" id="icj-gP-aJY"/>
+                            <constraint firstItem="eOW-Kp-6M5" firstAttribute="top" secondItem="huO-9r-36a" secondAttribute="bottom" constant="8" symbolic="YES" id="kn1-q1-k5I"/>
+                            <constraint firstItem="huO-9r-36a" firstAttribute="top" secondItem="EDj-Mn-Vde" secondAttribute="bottom" constant="8" symbolic="YES" id="p8L-vV-amj"/>
+                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="leading" secondItem="huO-9r-36a" secondAttribute="leading" id="vjf-N9-xgM"/>
+                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="y7n-Du-vly"/>
+                            <constraint firstItem="ps0-Uz-A3q" firstAttribute="trailing" secondItem="huO-9r-36a" secondAttribute="trailing" id="yzy-Qg-Oqm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="xih-Lp-cKy"/>
+                    <connections>
+                        <outlet property="vitesse" destination="eOW-Kp-6M5" id="YFs-5b-hOP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
