@@ -1,6 +1,7 @@
 package fr.univ_lr.drone_controller;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -50,7 +53,15 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
 
+        LatLng pt1 = new LatLng(46.1500554,-1.1793666);
+        LatLng pt2 = new LatLng(46.1524981,-1.1632486);
+
         LatLng loc = new LatLng(46.1425159,-1.1444612);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+
+        Polyline line = this.gmap.addPolyline(new PolylineOptions()
+                .add(pt1,pt2)
+                .width(5)
+                .color(Color.RED));
     }
 }
