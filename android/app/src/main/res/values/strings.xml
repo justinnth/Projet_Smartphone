@@ -6,4 +6,8 @@
     <string name="toView1">Vue 1</string>
     <string name="toView2">Vue 2</string>
     <string name="toView3">Vue 3</string>
+    
+    <!-- VIEW 3 -->
+    <string name="drawLines">Affiche le tracé</string>
+    <string name="clear">Nettoyer la carte</string>
 </resources>

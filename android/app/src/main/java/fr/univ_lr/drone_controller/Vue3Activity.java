@@ -6,19 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
+import android.widget.TextView;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
+
+import java.util.ArrayList;
 
 public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallback {
 
     private Button toView1;
     private Button toView2;
     private GoogleMap gmap;
+    private ArrayList<LatLng> waypoints;
+    private TextView ptCoords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,11 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         this.toView1 = (Button) findViewById(R.id.toView1);
         this.toView2 = (Button) findViewById(R.id.toView2);
+        this.waypoints = new ArrayList<>();
+        this.ptCoords = (TextView) findViewById(R.id.textCoordsPoint);
+
+        Button trace = (Button) findViewById(R.id.buttonTrace);
+        Button clear = (Button) findViewById(R.id.buttonClear);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView3);
         mapFragment.getMapAsync(this);
@@ -47,21 +52,60 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
                 finish();
             }
         });
+
+        trace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawLines();
+            }
+        });
+
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clear();
+            }
+        });
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
-
-        LatLng pt1 = new LatLng(46.1500554,-1.1793666);
-        LatLng pt2 = new LatLng(46.1524981,-1.1632486);
-
         LatLng loc = new LatLng(46.1425159,-1.1444612);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
 
-        Polyline line = this.gmap.addPolyline(new PolylineOptions()
-                .add(pt1,pt2)
-                .width(5)
-                .color(Color.RED));
+        this.gmap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng point) {
+                gmap.addMarker(new MarkerOptions().position(point));
+                addPoint(point);
+            }
+        });
     }
+
+    private void addPoint(LatLng point) {
+        this.waypoints.add(point);
+        double longitude = point.longitude;
+        double latitude = point.latitude;
+        this.ptCoords.setText(String.format("Longitude : %s\nLatitude : %s",longitude,latitude));
+    }
+
+    private void drawLines() {
+        for (int i=0 ; i < this.waypoints.size() - 1 ; i++ ) {
+            LatLng pt1 = this.waypoints.get(i);
+            LatLng pt2 = this.waypoints.get(i+1);
+
+            this.gmap.addPolyline(new PolylineOptions()
+                    .add(pt1,pt2)
+                    .width(5)
+                    .color(Color.RED));
+        }
+    }
+
+    private void clear() {
+        this.gmap.clear();
+        this.waypoints = new ArrayList<>();
+        this.ptCoords.setText("");
+    }
+
 }
