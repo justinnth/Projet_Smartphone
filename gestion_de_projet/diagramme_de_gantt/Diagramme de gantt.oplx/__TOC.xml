@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <omniplan xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opnx="http://www.omnigroup.com/namespace/OmniPlan/v2" file-format-version="2">
-  <window x="0" y="0" w="1680" h="1008">
+  <window x="0" y="0" w="1680" h="1007">
     <editing-scenario>g6wcmY80Mg5</editing-scenario>
     <view>task</view>
     <change-tracking/>
     <status-display>basic</status-display>
     <task-view>
       <split-view-divider-position>381</split-view-divider-position>
-      <outline x="0" y="220" w="381" h="985">
+      <outline x="0" y="26.5" w="381" h="984">
         <column name="Violations" width="20"/>
         <column name="Notes" width="20"/>
-        <column name="Title" width="257"/>
+        <column name="Title" width="266"/>
         <column name="Effort" width="70"/>
-        <expanded-items idrefs="t27 t69 t70 t53 t33 t9 t73 t1 t51 t34 t2 t48 t54 t68 t10"/>
-        <selected-items-at-filter-time idrefs="t59 t73 t80 t31 t74 t25 t81 t32 t75 t82 t40 t26 t33 t68 t76 t41 t69 t27 t34 t83 t77 t42 t28 t35 t84 t2 t78 t43 t29 t50 t36 t85 t79 t51 t37 t44 t5 t38 t10 t45 t6 t52 t7 t53 t8 t60 t39 t46 t9 t47 t54 t61 t55 t13 t48 t62 t49 t56 t70 t14 t71 t57 t58 t23 t30 t72"/>
+        <expanded-items idrefs="t33 t69 t70 t53 t27 t73 t1 t51 t34 t48 t2 t54 t68 t10"/>
+        <selected-items-at-filter-time idrefs="t58 t77 t45 t13 t8 t83 t51 t59 t9 t78 t46 t27 t70 t14 t84 t33 t79 t47 t34 t85 t53 t48 t54 t73 t41 t60 t68 t36 t23 t74 t42 t10 t61 t69 t37 t80 t56 t2 t43 t38 t81 t57 t5 t44 t6 t82 t7"/>
       </outline>
-      <gantt-view x="184.5" y="220" w="1297" h="985">
+      <gantt-view x="78.5" y="26.5" w="1297" h="984">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>
@@ -47,7 +47,7 @@
         <task-bar-label task-type="task" position="right">
           <key>Assigned</key>
         </task-bar-label>
-        <scale scale-name="Automatic" full-day-width="300">
+        <scale scale-name="Automatic" full-day-width="293.344">
           <selected/>
         </scale>
         <scale scale-name="Day" full-day-width="1215"/>

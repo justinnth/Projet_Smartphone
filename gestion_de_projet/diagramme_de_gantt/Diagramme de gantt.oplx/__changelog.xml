@@ -328,4 +328,7 @@
       <change idref="t85" attribute="title" type="string" to="Définir une vitesse entre chaque waypoints"/>
     </change>
   </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-03-27T11:21:46.788Z" timestamp="2019-03-27T11:21:46.788Z">
+    <change idref="t23" attribute="internalAssignments" type="string" from="" to="3; 4; 5; 6" resolved="yes"/>
+  </task-change-set>
 </changelog>
