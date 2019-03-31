@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -71,8 +72,8 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
-        LatLng loc = new LatLng(46.1425159,-1.1444612);
-        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        LatLng loc = new LatLng(46.1481759,-1.1694211);
+        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
 
         this.gmap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
@@ -100,6 +101,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
                     .width(5)
                     .color(Color.RED));
         }
+        transformIntoNMEA();
     }
 
     private void clear() {
@@ -108,4 +110,47 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
         this.ptCoords.setText("");
     }
 
+    /*
+    $GPRMC,053740.000,A,2503.6319,N,12136.0099,E,2.69,79.65,100106,,,A*53
+
+    $GPRMC       : type de trame
+    053740.000   : heure UTC exprimée en hhmmss.sss : 5h 37m 40s
+    A            : état A=données valides, V=données invalides
+    2503.6319    : Latitude exprimée en ddmm.mmmm : 25°03.6319' = 25°03'37,914"
+    N            : indicateur de latitude N=nord, S=sud
+    12136.0099   : Longitude exprimée en dddmm.mmmm : 121°36.0099' = 121°36'00,594"
+    E            : indicateur de longitude E=est, W=ouest
+    2.69         : vitesse sur le fond en nœuds (2,69 kn = 3,10 mph = 4,98 km/h)
+    79.65        : route sur le fond en degrés
+    100106       : date exprimée en qqmmaa : 10 janvier 2006
+    ,            : déclinaison magnétique en degrés (souvent vide pour un GPS)
+    ,            : sens de la déclinaison E=est, W=ouest (souvent vide pour un GPS)
+    A            : mode de positionnement A=autonome, D=DGPS, E=DR
+    *53          : somme de contrôle de parité au format hexadécimal
+    */
+
+    //  $GPRMC,110602.372,V,3454.928,N,08102.498,W,35.0,2.35,290319,,E*48
+    private void transformIntoNMEA() {
+
+        for(LatLng point : this.waypoints) {
+            String type = "$GPRMC";
+            String time = "000000.000";
+            String etat = "A";
+            String lat = String.valueOf(point.latitude);
+            String latIndic = "";
+            String lon = String.valueOf(point.longitude);
+            String lonIndic = "";
+            String vitesse = "";
+            String routeDeg = "";
+            String date = "";
+            String decliMagn = "";
+            String sensMagn = "";
+            String modePos = "";
+            String sum = "";
+
+            String trame = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",type,time,etat,lat,latIndic,lon,lonIndic,vitesse,routeDeg,date,decliMagn,sensMagn,modePos,sum);
+            Log.d("NMEA",trame);
+
+        }
+    }
 }

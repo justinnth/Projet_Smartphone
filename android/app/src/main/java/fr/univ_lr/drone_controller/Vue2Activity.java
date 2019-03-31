@@ -72,7 +72,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
 
-        LatLng loc = new LatLng(46.1425159,-1.1444612);
-        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,13));
+        LatLng loc = new LatLng(46.1481759,-1.1694211);
+        this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
     }
 }
