@@ -30,6 +30,9 @@ class ViewController: UIViewController {
         case .success:
             appendToTextField(string: "Connecté à l'hôte : \(client.address)")
             if let response = sendRequest(string: "GET / HTTP/1.1\n\n", using: client){
+                if response.contains("$GPGLL"){
+                    print("Trouvé")
+                }
                 appendToTextField(string: "Réponse : \(response)")
             }
         case .failure(let error):
@@ -58,6 +61,12 @@ class ViewController: UIViewController {
     private func appendToTextField(string: String) {
         print(string)
         vitesse.text = vitesse.text.appending("\n\(string)")
+    }
+    
+    func separateByString(String wholeString: String, byChar char:String) -> [String] {
+        
+        let resultArray = wholeString.components(separatedBy: char)
+        return resultArray
     }
 }
 
