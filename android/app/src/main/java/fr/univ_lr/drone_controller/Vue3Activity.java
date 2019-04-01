@@ -135,7 +135,6 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
         for(LatLng point : this.waypoints) {
             String type = "GPRMC";
             String time = "063951.774";
-            String etat = "A";
 
             String lat = convertIntoDMS(point.latitude);
             String latIndic;
@@ -152,16 +151,13 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
                 lonIndic = "W";
 
             String speed = "30";
-            String routeDeg = "90";
-            String sensMagn = "010419";
-            String modePos = "";
             String sum = "E";
 
-            String trame = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",time,etat,lat,latIndic,lon,lonIndic,speed,routeDeg,sensMagn,modePos,sum);
+            String trame = String.format("%s,%s,%s,%s,%s,%s,%s",time,lat,latIndic,lon,lonIndic,speed,sum);
 
             trame = ("$") + type + "," + trame + ("*") + getChecksum(trame);
 
-            Log.d("NMEA final",trame);
+            Log.d("NMEA",trame);
 
 
         }
