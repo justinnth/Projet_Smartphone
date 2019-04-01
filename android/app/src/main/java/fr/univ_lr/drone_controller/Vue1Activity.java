@@ -71,6 +71,9 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
     }
 
+    /**
+     * @// TODO: 01/04/2019 Réussir à faire fonctionner le socket HTTP
+     */
     class ClientThread implements Runnable {
 
         @Override

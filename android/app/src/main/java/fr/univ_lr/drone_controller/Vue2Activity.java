@@ -75,6 +75,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        // Gestionnaire de capteurs, dans ce cas si, l'Acceleromètre
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
@@ -88,6 +89,11 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
     }
 
+    /**
+     * Fonction appelée lors d'un changement détecté sur les capteurs
+     * @param event
+     * @// TODO: 01/04/2019 Gestion du déplacement du drone suite à la rotation
+     */
     @Override
     public void onSensorChanged(SensorEvent event) {
         Log.d("Axis x",String.valueOf(event.values[0]));
