@@ -1,9 +1,15 @@
 package fr.univ_lr.drone_controller;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -14,10 +20,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 
 
-public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallback {
+public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallback, SensorEventListener {
 
     private Button toView1, toView3, home, urgence;
     private GoogleMap gmap;
+    private SensorManager sensorManager;
+    private Sensor sensor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +75,9 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -74,5 +86,16 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng loc = new LatLng(46.1481759,-1.1694211);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        Log.d("Axis x",String.valueOf(event.values[0]));
+        Log.d("Axis y",String.valueOf(event.values[1]));
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
     }
 }
