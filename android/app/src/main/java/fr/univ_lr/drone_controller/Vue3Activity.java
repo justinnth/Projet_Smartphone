@@ -99,7 +99,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
             this.gmap.addPolyline(new PolylineOptions()
                     .add(pt1,pt2)
                     .width(5)
-                    .color(Color.RED));
+                    .color(Color.BLACK));
         }
         transformIntoNMEA();
     }
@@ -133,24 +133,94 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
     private void transformIntoNMEA() {
 
         for(LatLng point : this.waypoints) {
-            String type = "$GPRMC";
-            String time = "000000.000";
+            String type = "GPRMC";
+            String time = "063951.774";
             String etat = "A";
-            String lat = String.valueOf(point.latitude);
-            String latIndic = "";
-            String lon = String.valueOf(point.longitude);
-            String lonIndic = "";
-            String vitesse = "";
-            String routeDeg = "";
-            String date = "";
-            String decliMagn = "";
-            String sensMagn = "";
-            String modePos = "";
-            String sum = "";
 
-            String trame = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",type,time,etat,lat,latIndic,lon,lonIndic,vitesse,routeDeg,date,decliMagn,sensMagn,modePos,sum);
-            Log.d("NMEA",trame);
+            String lat = convertIntoDMS(point.latitude);
+            String latIndic;
+            if (point.latitude < 0 )
+                latIndic = "S";
+            else
+                latIndic = "N";
+
+            String lon = convertIntoDMS(point.longitude);
+            String lonIndic;
+            if (point.longitude < 0 )
+                lonIndic = "E";
+            else
+                lonIndic = "W";
+
+            String speed = "30";
+            String routeDeg = "90";
+            String sensMagn = "010419";
+            String modePos = "";
+            String sum = "E";
+
+            String trame = String.format("%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s",time,etat,lat,latIndic,lon,lonIndic,speed,routeDeg,sensMagn,modePos,sum);
+
+            trame = ("$") + type + "," + trame + ("*") + getChecksum(trame);
+
+            Log.d("NMEA final",trame);
+
 
         }
     }
+
+    private static String getChecksum(String in) {
+        int checksum = 0;
+
+        int end = in.indexOf('*');
+        if (end == -1)
+            end = in.length();
+        for (int i = 0; i < end; i++) {
+            checksum = checksum ^ in.charAt(i);
+        }
+        String hex = Integer.toHexString(checksum);
+        if (hex.length() == 1)
+            hex = "0" + hex;
+        return hex.toUpperCase();
+    }
+
+    public static String convertIntoDMS(double coord) {
+
+        coord = Math.abs(coord); // SECURITE
+
+        int coordInteger = (int) coord; // renommer degre
+        double coordDecimal = coord - coordInteger;
+        String partieEntierePreCalcul;
+
+        if(coordInteger < 10) // on rajoute un 0 pour faire 08
+            partieEntierePreCalcul = "0"+coordInteger;
+        else // > 10, pas besoin de 0
+            partieEntierePreCalcul = String.valueOf(coordInteger);
+
+        coordDecimal *= 60;
+
+        int coordInteger2 = (int) coordDecimal; // minutes en int
+        double coordDecimal2 = coordDecimal - coordInteger2;
+
+        // minutes en string
+        String partieDecimalePostCalcul = Double.toString(coordDecimal2); // partieDecimalePostCalcul en minutes
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(partieDecimalePostCalcul.charAt(2));
+        sb.append(partieDecimalePostCalcul.charAt(3));
+        sb.append(partieDecimalePostCalcul.charAt(4));
+        sb.append(partieDecimalePostCalcul.charAt(5));
+        String mmmm = sb.toString();
+
+        String partieEntierePostCalcul;
+
+        if(coordInteger2 < 10) // on rajoute un 0 pour faire 08
+            partieEntierePostCalcul = "0"+coordInteger2;
+        else // > 10, pas besoin de 0
+            partieEntierePostCalcul = String.valueOf(coordInteger2);
+
+        String ddmm = partieEntierePreCalcul + partieEntierePostCalcul;
+
+        return ddmm + "." + mmmm;
+
+    }
+
 }
