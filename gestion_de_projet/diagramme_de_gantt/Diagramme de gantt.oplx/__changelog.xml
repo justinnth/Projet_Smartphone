@@ -1,334 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
   <version>2.1</version>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:18:37.445Z" timestamp="2019-03-27T09:18:37.445Z">
-    <change idref="t2" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
-    <change idref="t2" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
-    <change idref="t2" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
-    <change idref="t2" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
-    <change idref="t2" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
-    <change idref="t2" attribute="staticCost" type="real" from="0" resolved="yes"/>
-    <change idref="t2" attribute="effort" type="real" from="1123200" resolved="yes"/>
-    <change idref="t2" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
-    <change idref="t2" attribute="scheduleType" type="real" from="0" resolved="yes"/>
-    <change idref="t2" attribute="internalAssignments" type="string" from="3; 6; 1" resolved="yes"/>
-    <change idref="t2" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
-    <change idref="t2" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
-    <change idref="t27" to="t2" to-position="0" resolved="yes">
-      <change idref="t27" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t27" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-22T15:45:00.000Z"/>
-      <change idref="t27" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t27" attribute="title" type="string" to="Vue 1"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T12:44:52.033Z" timestamp="2019-04-03T12:44:52.033Z">
+    <change idref="t59" attribute="effort" type="real" from="144000" to="244800" resolved="yes"/>
+    <change idref="t60" attribute="effort" type="real" from="144000" to="244800" resolved="yes"/>
+    <change idref="t61" attribute="effort" type="real" from="144000" to="244800" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T12:50:23.771Z" timestamp="2019-04-03T12:50:23.771Z">
+    <change idref="t86" to="t2" to-position="1" resolved="yes">
+      <change idref="t86" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t86" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t86" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t86" attribute="title" type="string" to="Dépot 3"/>
     </change>
-    <change idref="t33" to="t2" to-position="1" resolved="yes">
-      <change idref="t33" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t33" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t33" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t33" attribute="title" type="string" to="Vue 2"/>
+    <change idref="t87" to="t86" to-position="0" resolved="yes">
+      <change idref="t87" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t87" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t87" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t87" attribute="title" type="string" to="Vue 1"/>
     </change>
-    <change idref="t34" to="t2" to-position="2" resolved="yes">
-      <change idref="t34" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t34" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t34" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t34" attribute="title" type="string" to="Vue 3"/>
+    <change idref="t88" to="t86" to-position="1" resolved="yes">
+      <change idref="t88" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t88" attribute="title" type="string" to="Vue 2"/>
     </change>
-    <change idref="t36" to="t27" to-position="0" resolved="yes">
-      <change idref="t36" attribute="effort" type="real" from="28800" to="13500"/>
-      <change idref="t36" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:15:00.000Z"/>
-      <change idref="t36" attribute="title" type="string" to="Google Maps"/>
+    <change idref="t89" to="t86" to-position="2" resolved="yes">
+      <change idref="t89" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t89" attribute="title" type="string" to="Vue 3"/>
     </change>
-    <change idref="t37" to="t27" to-position="1" resolved="yes">
-      <change idref="t37" attribute="effort" type="real" from="28800" to="14400"/>
-      <change idref="t37" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T12:00:00.000Z"/>
-      <change idref="t37" attribute="title" type="string" to="Boutons pour changer de vue"/>
+    <change idref="t90" to="t87" to-position="0" resolved="yes">
+      <change idref="t90" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t90" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-02T14:45:00.000Z"/>
+      <change idref="t90" attribute="title" type="string" to="Récupérations données NMEA"/>
     </change>
-    <change idref="t38" to="t27" to-position="2" resolved="yes">
-      <change idref="t38" attribute="effort" type="real" from="28800" to="57600"/>
-      <change idref="t38" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
-      <change idref="t38" attribute="title" type="string" to="Récupérations données NMEA"/>
+    <change idref="t91" to="t87" to-position="1" resolved="yes">
+      <change idref="t91" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t91" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t91" attribute="title" type="string" to="Tracé du trajet à partir des données NMEA"/>
     </change>
-    <change idref="t41" to="t33" to-position="0" resolved="yes">
-      <change idref="t41" attribute="effort" type="real" from="28800" to="14400"/>
-      <change idref="t41" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-22T15:00:00.000Z"/>
-      <change idref="t41" attribute="title" type="string" to="Google Maps"/>
-    </change>
-    <change idref="t42" to="t33" to-position="1" resolved="yes">
-      <change idref="t42" attribute="effort" type="real" from="28800" to="14400"/>
-      <change idref="t42" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T12:00:00.000Z"/>
-      <change idref="t42" attribute="title" type="string" to="Boutons pour changer de vue"/>
-    </change>
-    <change idref="t43" to="t33" to-position="2" resolved="yes">
-      <change idref="t43" attribute="effort" type="real" from="28800" to="57600"/>
-      <change idref="t43" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
-      <change idref="t43" attribute="title" type="string" to="Boutons Home &amp; Urgence"/>
-    </change>
-    <change idref="t44" to="t34" to-position="0" resolved="yes">
-      <change idref="t44" attribute="effort" type="real" from="28800" to="14400"/>
-      <change idref="t44" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t44" attribute="title" type="string" to="Google Maps"/>
-    </change>
-    <change idref="t45" to="t34" to-position="1" resolved="yes">
-      <change idref="t45" attribute="effort" type="real" from="28800" to="14400"/>
-      <change idref="t45" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T12:00:00.000Z"/>
-      <change idref="t45" attribute="title" type="string" to="Boutons changer de vue"/>
-    </change>
-    <change idref="t46" to="t34" to-position="2" resolved="yes">
-      <change idref="t46" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
-      <change idref="t46" attribute="title" type="string" to="Positionner waypoints et les afficher"/>
-    </change>
-    <change idref="t47" to="t34" to-position="3" resolved="yes">
-      <change idref="t47" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
-      <change idref="t47" attribute="title" type="string" to="Définir une vitesse entre chaque waypoints"/>
+    <change idref="t92" to="t87" to-position="2" resolved="yes">
+      <change idref="t92" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t92" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t92" attribute="title" type="string" to="Affichage de la vitesse"/>
     </change>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:21:31.155Z" timestamp="2019-03-27T09:21:31.155Z">
-    <change idref="t48" to="t2" to-position="0" resolved="yes">
-      <change idref="t48" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t48" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t48" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
-      <change idref="t48" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t48" attribute="title" type="string" to="Dépot 2"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T12:54:17.371Z" timestamp="2019-04-03T12:54:17.371Z">
+    <change idref="t86" from="t2" from-position="1" resolved="yes">
+      <change idref="t86" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t86" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t86" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t86" attribute="title" type="string" to="Dépot 3"/>
     </change>
-    <change idref="t27" from="t2" from-position="0" to="t48" to-position="0" resolved="yes"/>
-    <change idref="t33" from="t2" from-position="1" to="t48" to-position="1" resolved="yes"/>
-    <change idref="t34" from="t2" from-position="2" to="t48" to-position="2" resolved="yes"/>
-  </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:27:20.114Z" timestamp="2019-03-27T09:27:20.114Z">
-    <change idref="t51" to="t-1" to-position="1" resolved="yes">
-      <change idref="t51" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t51" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t51" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t51" attribute="title" type="string" to="Méthode Scrum"/>
+    <change idref="t93" to="t2" to-position="1" resolved="yes">
+      <change idref="t93" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t93" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t93" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t93" attribute="title" type="string" to="Dépot 3"/>
     </change>
-    <change idref="t36" attribute="effort" type="real" from="13500" to="27000" resolved="yes"/>
-    <change idref="t37" attribute="effort" type="real" from="14400" to="28800" resolved="yes"/>
-    <change idref="t37" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-25T12:00:00.000Z" to="2019-03-26T07:00:00.000Z" resolved="yes"/>
-    <change idref="t38" attribute="effort" type="real" from="57600" to="86400" resolved="yes"/>
-    <change idref="t38" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-26T07:00:00.000Z" to="2019-03-27T07:00:00.000Z" resolved="yes"/>
-    <change idref="t41" attribute="effort" type="real" from="14400" to="28800" resolved="yes"/>
-    <change idref="t42" attribute="effort" type="real" from="14400" to="28800" resolved="yes"/>
-    <change idref="t42" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-25T12:00:00.000Z" to="2019-03-26T07:00:00.000Z" resolved="yes"/>
-    <change idref="t43" attribute="effort" type="real" from="57600" to="86400" resolved="yes"/>
-    <change idref="t43" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-26T07:00:00.000Z" to="2019-03-27T07:00:00.000Z" resolved="yes"/>
-    <change idref="t44" attribute="effort" type="real" from="14400" to="28800" resolved="yes"/>
-    <change idref="t45" attribute="effort" type="real" from="14400" to="28800" resolved="yes"/>
-    <change idref="t45" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-25T12:00:00.000Z" to="2019-03-26T07:00:00.000Z" resolved="yes"/>
-    <change idref="t46" attribute="effort" type="real" from="28800" to="43200" resolved="yes"/>
-    <change idref="t46" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-26T07:00:00.000Z" to="2019-03-27T07:00:00.000Z" resolved="yes"/>
-    <change idref="t47" attribute="effort" type="real" from="28800" to="43200" resolved="yes"/>
-    <change idref="t47" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-27T07:00:00.000Z" to="2019-03-28T12:00:00.000Z" resolved="yes"/>
-    <change idref="t53" to="t51" to-position="0" resolved="yes">
-      <change idref="t53" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t53" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t53" attribute="title" type="string" to="Dépot 2"/>
+    <change idref="t95" to="t93" to-position="0" resolved="yes">
+      <change idref="t95" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t95" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t95" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t95" attribute="title" type="string" to="Vue 1"/>
     </change>
-    <change idref="t54" to="t51" to-position="1" resolved="yes">
-      <change idref="t54" attribute="effort" type="real" from="28800" to="135000"/>
-      <change idref="t54" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
-      <change idref="t54" attribute="title" type="string" to="Dépot 3"/>
+    <change idref="t97" to="t95" to-position="0" resolved="yes">
+      <change idref="t97" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t97" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t97" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t97" attribute="title" type="string" to="Récupérations données NMEA"/>
+    </change>
+    <change idref="t98" to="t95" to-position="1" resolved="yes">
+      <change idref="t98" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t98" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t98" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-08T06:00:00.000Z"/>
+      <change idref="t98" attribute="title" type="string" to="Tracé du trajet à partir des données NMEA"/>
+    </change>
+    <change idref="t99" to="t95" to-position="2" resolved="yes">
+      <change idref="t99" attribute="effort" type="real" from="28800" to="43200"/>
+      <change idref="t99" attribute="internalAssignments" type="string" from="" to="3"/>
+      <change idref="t99" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-10T06:00:00.000Z"/>
+      <change idref="t99" attribute="title" type="string" to="Affichage de la vitesse"/>
     </change>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:30:43.584Z" timestamp="2019-03-27T09:30:43.584Z">
-    <change idref="t53" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
-    <change idref="t53" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
-    <change idref="t53" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
-    <change idref="t53" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
-    <change idref="t53" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
-    <change idref="t53" attribute="staticCost" type="real" from="0" resolved="yes"/>
-    <change idref="t53" attribute="effort" type="real" from="144000" resolved="yes"/>
-    <change idref="t53" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
-    <change idref="t53" attribute="scheduleType" type="real" from="0" resolved="yes"/>
-    <change idref="t53" attribute="internalAssignments" type="string" from="" resolved="yes"/>
-    <change idref="t53" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
-    <change idref="t53" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
-    <change idref="t56" to="t53" to-position="0" resolved="yes">
-      <change idref="t56" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t56" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t56" attribute="title" type="string" to="Définir tâches"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T12:58:51.725Z" timestamp="2019-04-03T12:58:51.725Z">
+    <change idref="t100" to="t93" to-position="1" resolved="yes">
+      <change idref="t100" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t100" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t100" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t100" attribute="title" type="string" to="Vue 2"/>
     </change>
-    <change idref="t57" to="t53" to-position="1" resolved="yes">
-      <change idref="t57" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t57" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t57" attribute="title" type="string" to="Répartir tâches"/>
+    <change idref="t101" to="t100" to-position="0" resolved="yes">
+      <change idref="t101" attribute="effort" type="real" from="28800" to="115200"/>
+      <change idref="t101" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t101" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t101" attribute="title" type="string" to="Accéléromètre"/>
     </change>
-    <change idref="t58" to="t53" to-position="2" resolved="yes">
-      <change idref="t58" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t58" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t58" attribute="title" type="string" to="Mettre à jour documents"/>
+    <change idref="t102" to="t100" to-position="1" resolved="yes">
+      <change idref="t102" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t102" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t102" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-05T06:00:00.000Z"/>
+      <change idref="t102" attribute="title" type="string" to="Infos sur la vitesse et les coordonnées actuelles du drone"/>
     </change>
-    <change idref="t54" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
-    <change idref="t54" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
-    <change idref="t54" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
-    <change idref="t54" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
-    <change idref="t54" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
-    <change idref="t54" attribute="staticCost" type="real" from="0" resolved="yes"/>
-    <change idref="t54" attribute="effort" type="real" from="135000" resolved="yes"/>
-    <change idref="t54" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
-    <change idref="t54" attribute="scheduleType" type="real" from="0" resolved="yes"/>
-    <change idref="t54" attribute="internalAssignments" type="string" from="" resolved="yes"/>
-    <change idref="t54" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
-    <change idref="t54" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
-    <change idref="t59" to="t54" to-position="0" resolved="yes">
-      <change idref="t59" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t59" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
-      <change idref="t59" attribute="title" type="string" to="Définir tâches"/>
-    </change>
-    <change idref="t60" to="t54" to-position="1" resolved="yes">
-      <change idref="t60" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t60" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
-      <change idref="t60" attribute="title" type="string" to="Répartir tâches"/>
-    </change>
-    <change idref="t61" to="t54" to-position="2" resolved="yes">
-      <change idref="t61" attribute="effort" type="real" from="28800" to="144000"/>
-      <change idref="t61" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
-      <change idref="t61" attribute="title" type="string" to="Mettre à jour documents"/>
+    <change idref="t103" to="t100" to-position="2" resolved="yes">
+      <change idref="t103" attribute="effort" type="real" from="28800" to="72000"/>
+      <change idref="t103" attribute="internalAssignments" type="string" from="" to="6"/>
+      <change idref="t103" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-09T06:00:00.000Z"/>
+      <change idref="t103" attribute="title" type="string" to="Tracé en direct en fonction des coordonnées changées par l’accéléromètre"/>
     </change>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:31:39.153Z" timestamp="2019-03-27T09:31:39.153Z">
-    <change idref="t56" attribute="internalAssignments" type="string" from="" to="2" resolved="yes"/>
-    <change idref="t57" attribute="internalAssignments" type="string" from="" to="2" resolved="yes"/>
-    <change idref="t58" attribute="internalAssignments" type="string" from="" to="2" resolved="yes"/>
-    <change idref="t59" attribute="internalAssignments" type="string" from="" to="2" resolved="yes"/>
-    <change idref="t60" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-27T07:00:00.000Z" to="2019-04-01T06:00:00.000Z" resolved="yes"/>
-    <change idref="t60" attribute="internalAssignments" type="string" from="" to="2" resolved="yes"/>
-    <change idref="t61" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-27T07:00:00.000Z" to="2019-03-29T15:45:00.000Z" resolved="yes"/>
-    <change idref="t61" attribute="internalAssignments" type="string" from="" to="2" resolved="yes"/>
-  </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:32:56.172Z" timestamp="2019-03-27T09:32:56.172Z">
-    <change idref="t36" attribute="internalAssignments" type="string" from="" to="3" resolved="yes"/>
-    <change idref="t37" attribute="internalAssignments" type="string" from="" to="3" resolved="yes"/>
-    <change idref="t38" attribute="internalAssignments" type="string" from="" to="3" resolved="yes"/>
-    <change idref="t41" attribute="internalAssignments" type="string" from="" to="6" resolved="yes"/>
-    <change idref="t42" attribute="internalAssignments" type="string" from="" to="6" resolved="yes"/>
-    <change idref="t43" attribute="internalAssignments" type="string" from="" to="6" resolved="yes"/>
-    <change idref="t44" attribute="internalAssignments" type="string" from="" to="1" resolved="yes"/>
-    <change idref="t45" attribute="internalAssignments" type="string" from="" to="1" resolved="yes"/>
-    <change idref="t46" attribute="internalAssignments" type="string" from="" to="1" resolved="yes"/>
-    <change idref="t47" attribute="internalAssignments" type="string" from="" to="1" resolved="yes"/>
-  </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:37:45.601Z" timestamp="2019-03-27T09:37:45.601Z">
-    <change idref="t10" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
-    <change idref="t10" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
-    <change idref="t10" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
-    <change idref="t10" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
-    <change idref="t10" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
-    <change idref="t10" attribute="staticCost" type="real" from="0" resolved="yes"/>
-    <change idref="t10" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0" resolved="yes"/>
-    <change idref="t10" attribute="effort" type="real" from="1123200" resolved="yes"/>
-    <change idref="t10" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
-    <change idref="t10" attribute="scheduleType" type="real" from="0" resolved="yes"/>
-    <change idref="t10" attribute="internalAssignments" type="string" from="5; 4; 2" resolved="yes"/>
-    <change idref="t10" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
-    <change idref="t10" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
-    <change idref="t68" to="t10" to-position="0" resolved="yes">
-      <change idref="t68" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t68" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t68" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
-      <change idref="t68" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t68" attribute="title" type="string" to="Dépot 2"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:05:11.782Z" timestamp="2019-04-03T13:05:11.782Z">
+    <change idref="t106" to="t34" to-position="4" resolved="yes">
+      <change idref="t106" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t106" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-29T07:00:00.000Z"/>
+      <change idref="t106" attribute="title" type="string" to="Tracer trajectoire entre les waypoints"/>
     </change>
-    <change idref="t73" to="t68" to-position="0" resolved="yes">
-      <change idref="t73" attribute="isGroup" type="real" from="0" to="1"/>
-      <change idref="t73" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t73" attribute="taskType" type="real" from="0" to="2"/>
-      <change idref="t73" attribute="title" type="string" to="Vue 1"/>
+    <change idref="t107" to="t34" to-position="5" resolved="yes">
+      <change idref="t107" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t107" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-29T07:00:00.000Z"/>
+      <change idref="t107" attribute="title" type="string" to="Bouton « Tracer le trajet »"/>
     </change>
-    <change idref="t69" to="t68" to-position="1" resolved="yes">
-      <change idref="t69" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t69" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
-      <change idref="t69" attribute="title" type="string" to="Vue 2"/>
+    <change idref="t108" to="t34" to-position="6" resolved="yes">
+      <change idref="t108" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t108" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-29T07:00:00.000Z"/>
+      <change idref="t108" attribute="title" type="string" to="Bouton « Nettoyer le trajet »"/>
     </change>
-    <change idref="t70" to="t68" to-position="2" resolved="yes">
-      <change idref="t70" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t70" attribute="noLaterThanConstrainedTaskEnd" type="real" from="1" to="0"/>
-      <change idref="t70" attribute="title" type="string" to="Vue 3"/>
+    <change idref="t46" attribute="effort" type="real" from="43200" to="28800" resolved="yes"/>
+    <change idref="t47" attribute="effort" type="real" from="43200" to="28800" resolved="yes"/>
+    <change idref="t47" attribute="noEarlierThanConstraintDate" type="date" from="2019-03-28T12:00:00.000Z" to="2019-03-28T07:00:00.000Z" resolved="yes"/>
+    <change idref="t104" to="t93" to-position="2" resolved="yes">
+      <change idref="t104" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t104" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t104" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t104" attribute="title" type="string" to="Vue 3"/>
     </change>
-    <change idref="t74" to="t73" to-position="0" resolved="yes">
-      <change idref="t74" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t74" attribute="title" type="string" to="Google Maps"/>
+    <change idref="t105" to="t104" to-position="0" resolved="yes">
+      <change idref="t105" attribute="effort" type="real" from="28800" to="244800"/>
+      <change idref="t105" attribute="internalAssignments" type="string" from="" to="1"/>
+      <change idref="t105" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t105" attribute="title" type="string" to="Afficher les données dans un fichier JSON ou en données NMEA"/>
     </change>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:38:41.830Z" timestamp="2019-03-27T09:38:41.830Z">
-    <change idref="t77" to="t73" to-position="1" resolved="yes">
-      <change idref="t77" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
-      <change idref="t77" attribute="title" type="string" to="Boutons pour changer de vue"/>
-    </change>
-    <change idref="t78" to="t73" to-position="2" resolved="yes">
-      <change idref="t78" attribute="effort" type="real" from="28800" to="86400"/>
-      <change idref="t78" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
-      <change idref="t78" attribute="title" type="string" to="Récupérations données NMEA"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:06:11.693Z" timestamp="2019-04-03T13:06:11.693Z">
+    <change idref="t109" to="t54" to-position="3" resolved="yes">
+      <change idref="t109" attribute="effort" type="real" from="28800" to="489600"/>
+      <change idref="t109" attribute="internalAssignments" type="string" from="" to="1; 2"/>
+      <change idref="t109" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t109" attribute="title" type="string" to="Rapport finale"/>
     </change>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:53:26.384Z" timestamp="2019-03-27T09:53:26.384Z">
-    <change idref="t74" attribute="internalAssignments" type="string" from="" to="4" resolved="yes"/>
-    <change idref="t77" attribute="internalAssignments" type="string" from="" to="4" resolved="yes"/>
-    <change idref="t78" attribute="internalAssignments" type="string" from="" to="4" resolved="yes"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:06:17.357Z" timestamp="2019-04-03T13:06:17.357Z">
+    <change idref="t109" attribute="title" type="string" from="Rapport finale" to="Rapport final" resolved="yes"/>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T09:58:25.302Z" timestamp="2019-03-27T09:58:25.302Z">
-    <change idref="t69" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
-    <change idref="t69" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
-    <change idref="t69" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
-    <change idref="t69" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
-    <change idref="t69" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
-    <change idref="t69" attribute="staticCost" type="real" from="0" resolved="yes"/>
-    <change idref="t69" attribute="effort" type="real" from="28800" resolved="yes"/>
-    <change idref="t69" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
-    <change idref="t69" attribute="scheduleType" type="real" from="0" resolved="yes"/>
-    <change idref="t69" attribute="internalAssignments" type="string" from="" resolved="yes"/>
-    <change idref="t69" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
-    <change idref="t69" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
-    <change idref="t79" to="t69" to-position="0" resolved="yes">
-      <change idref="t79" attribute="internalAssignments" type="string" from="" to="2"/>
-      <change idref="t79" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t79" attribute="title" type="string" to="Google Maps"/>
-    </change>
-    <change idref="t80" to="t69" to-position="1" resolved="yes">
-      <change idref="t80" attribute="internalAssignments" type="string" from="" to="2"/>
-      <change idref="t80" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
-      <change idref="t80" attribute="title" type="string" to="Boutons changer de vue"/>
-    </change>
-    <change idref="t81" to="t69" to-position="2" resolved="yes">
-      <change idref="t81" attribute="effort" type="real" from="28800" to="86400"/>
-      <change idref="t81" attribute="internalAssignments" type="string" from="" to="2"/>
-      <change idref="t81" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
-      <change idref="t81" attribute="title" type="string" to="Boutons Home &amp; Urgence"/>
-    </change>
-    <change idref="t70" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
-    <change idref="t70" attribute="multiResourceWorkType" type="real" from="0" resolved="yes"/>
-    <change idref="t70" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
-    <change idref="t70" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
-    <change idref="t70" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
-    <change idref="t70" attribute="staticCost" type="real" from="0" resolved="yes"/>
-    <change idref="t70" attribute="effort" type="real" from="28800" resolved="yes"/>
-    <change idref="t70" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
-    <change idref="t70" attribute="scheduleType" type="real" from="0" resolved="yes"/>
-    <change idref="t70" attribute="internalAssignments" type="string" from="" resolved="yes"/>
-    <change idref="t70" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
-    <change idref="t70" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
-    <change idref="t82" to="t70" to-position="0" resolved="yes">
-      <change idref="t82" attribute="internalAssignments" type="string" from="" to="5"/>
-      <change idref="t82" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-25T07:00:00.000Z"/>
-      <change idref="t82" attribute="title" type="string" to="Google Maps"/>
-    </change>
-    <change idref="t83" to="t70" to-position="1" resolved="yes">
-      <change idref="t83" attribute="internalAssignments" type="string" from="" to="5"/>
-      <change idref="t83" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-26T07:00:00.000Z"/>
-      <change idref="t83" attribute="title" type="string" to="Boutons changer de vue"/>
-    </change>
-    <change idref="t84" to="t70" to-position="2" resolved="yes">
-      <change idref="t84" attribute="effort" type="real" from="28800" to="43200"/>
-      <change idref="t84" attribute="internalAssignments" type="string" from="" to="5"/>
-      <change idref="t84" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-27T07:00:00.000Z"/>
-      <change idref="t84" attribute="title" type="string" to="Positionner waypoints et les afficher"/>
-    </change>
-    <change idref="t85" to="t70" to-position="3" resolved="yes">
-      <change idref="t85" attribute="effort" type="real" from="28800" to="43200"/>
-      <change idref="t85" attribute="internalAssignments" type="string" from="" to="5"/>
-      <change idref="t85" attribute="noEarlierThanConstraintDate" type="date" to="2019-03-28T12:00:00.000Z"/>
-      <change idref="t85" attribute="title" type="string" to="Définir une vitesse entre chaque waypoints"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:07:04.366Z" timestamp="2019-04-03T13:07:04.366Z">
+    <change idref="t110" to="t54" to-position="4" resolved="yes">
+      <change idref="t110" attribute="effort" type="real" from="28800" to="489600"/>
+      <change idref="t110" attribute="internalAssignments" type="string" from="" to="1; 2"/>
+      <change idref="t110" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t110" attribute="title" type="string" to="Présentation finale"/>
     </change>
   </task-change-set>
-  <task-change-set user="Quentin Duléry" date="2019-03-27T11:21:46.788Z" timestamp="2019-03-27T11:21:46.788Z">
-    <change idref="t23" attribute="internalAssignments" type="string" from="" to="3; 4; 5; 6" resolved="yes"/>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:10:32.284Z" timestamp="2019-04-03T13:10:32.284Z">
+    <change idref="t111" to="t10" to-position="1" resolved="yes">
+      <change idref="t111" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t111" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t111" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t111" attribute="title" type="string" to="Dépot 3"/>
+    </change>
+    <change idref="t114" to="t113" to-position="0" resolved="yes">
+      <change idref="t114" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t114" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t114" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t114" attribute="title" type="string" to="Récupérations données NMEA"/>
+    </change>
+    <change idref="t115" to="t113" to-position="1" resolved="yes">
+      <change idref="t115" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t115" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t115" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-08T06:00:00.000Z"/>
+      <change idref="t115" attribute="title" type="string" to="Tracé du trajet à partir des données NMEA"/>
+    </change>
+    <change idref="t116" to="t113" to-position="2" resolved="yes">
+      <change idref="t116" attribute="effort" type="real" from="28800" to="43200"/>
+      <change idref="t116" attribute="internalAssignments" type="string" from="" to="4"/>
+      <change idref="t116" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-10T06:00:00.000Z"/>
+      <change idref="t116" attribute="title" type="string" to="Affichage de la vitesse"/>
+    </change>
+    <change idref="t113" to="t111" to-position="0" resolved="yes">
+      <change idref="t113" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t113" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t113" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t113" attribute="title" type="string" to="Vue 1"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:15:22.231Z" timestamp="2019-04-03T13:15:22.231Z">
+    <change idref="t117" to="t111" to-position="1" resolved="yes">
+      <change idref="t117" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t117" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t117" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t117" attribute="title" type="string" to="Vue 2"/>
+    </change>
+    <change idref="t118" to="t117" to-position="0" resolved="yes">
+      <change idref="t118" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t118" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t118" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t118" attribute="title" type="string" to="Boutons Home et Urgence"/>
+    </change>
+    <change idref="t119" to="t117" to-position="1" resolved="yes">
+      <change idref="t119" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t119" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t119" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-03T06:00:00.000Z"/>
+      <change idref="t119" attribute="title" type="string" to="Accéléromètre"/>
+    </change>
+    <change idref="t120" to="t117" to-position="2" resolved="yes">
+      <change idref="t120" attribute="effort" type="real" from="28800" to="43200"/>
+      <change idref="t120" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t120" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-08T06:00:00.000Z"/>
+      <change idref="t120" attribute="title" type="string" to="Infos sur la vitesse et les coordonnées actuelles du drone"/>
+    </change>
+    <change idref="t121" to="t117" to-position="3" resolved="yes">
+      <change idref="t121" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t121" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t121" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-09T11:00:00.000Z"/>
+      <change idref="t121" attribute="title" type="string" to="Tracé en direct en fonction des coordonnées changées par l’accéléromètre"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="Quentin Duléry" date="2019-04-03T13:21:14.049Z" timestamp="2019-04-03T13:21:14.049Z">
+    <change idref="t105" attribute="title" type="string" from="Afficher les données dans un fichier JSON ou en données NMEA" to="Afficher les données dans un fichier JSON ou en trames NMEA" resolved="yes"/>
+    <change idref="t122" to="t111" to-position="2" resolved="yes">
+      <change idref="t122" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t122" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t122" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t122" attribute="title" type="string" to="Vue 3"/>
+    </change>
+    <change idref="t118" attribute="internalAssignments" type="string" from="2" to="5" resolved="yes"/>
+    <change idref="t119" attribute="internalAssignments" type="string" from="2" to="5" resolved="yes"/>
+    <change idref="t120" attribute="internalAssignments" type="string" from="2" to="5" resolved="yes"/>
+    <change idref="t121" attribute="internalAssignments" type="string" from="2" to="5" resolved="yes"/>
+    <change idref="t123" to="t122" to-position="0" resolved="yes">
+      <change idref="t123" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t123" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t123" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-01T06:00:00.000Z"/>
+      <change idref="t123" attribute="title" type="string" to="Pouvoir positionner des waypoints et les afficher"/>
+    </change>
+    <change idref="t124" to="t122" to-position="1" resolved="yes">
+      <change idref="t124" attribute="effort" type="real" from="28800" to="86400"/>
+      <change idref="t124" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t124" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-04T06:00:00.000Z"/>
+      <change idref="t124" attribute="title" type="string" to="Pouvoir positionner une vitesse entre chaque waypoints"/>
+    </change>
+    <change idref="t125" to="t122" to-position="2" resolved="yes">
+      <change idref="t125" attribute="effort" type="real" from="28800" to="72000"/>
+      <change idref="t125" attribute="internalAssignments" type="string" from="" to="2"/>
+      <change idref="t125" attribute="noEarlierThanConstraintDate" type="date" to="2019-04-09T06:00:00.000Z"/>
+      <change idref="t125" attribute="title" type="string" to="Transmettre ces données dans un fichier JSON ou en trames NMEA"/>
+    </change>
   </task-change-set>
 </changelog>

@@ -103,6 +103,7 @@
     <type>group</type>
     <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
     <child-task idref="t48"/>
+    <child-task idref="t93"/>
     <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t5">
@@ -147,6 +148,7 @@
     <type>group</type>
     <start-constraint-date>2019-03-25T07:00:00.000Z</start-constraint-date>
     <child-task idref="t68"/>
+    <child-task idref="t111"/>
     <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t13">
@@ -201,6 +203,9 @@
     <child-task idref="t45"/>
     <child-task idref="t46"/>
     <child-task idref="t47"/>
+    <child-task idref="t106"/>
+    <child-task idref="t107"/>
+    <child-task idref="t108"/>
     <start-no-earlier-than>2019-03-25T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t36">
@@ -261,17 +266,17 @@
   </task>
   <task id="t46">
     <title>Positionner waypoints et les afficher</title>
-    <effort>43200</effort>
+    <effort>28800</effort>
     <start-constraint-date>2019-03-27T07:00:00.000Z</start-constraint-date>
     <assignment idref="r1"/>
     <start-no-earlier-than>2019-03-27T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t47">
     <title>Définir une vitesse entre chaque waypoints</title>
-    <effort>43200</effort>
-    <start-constraint-date>2019-03-28T12:00:00.000Z</start-constraint-date>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-28T07:00:00.000Z</start-constraint-date>
     <assignment idref="r1"/>
-    <start-no-earlier-than>2019-03-28T12:00:00.000Z</start-no-earlier-than>
+    <start-no-earlier-than>2019-03-28T07:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t48">
     <title>Dépot 2</title>
@@ -306,6 +311,8 @@
     <child-task idref="t59"/>
     <child-task idref="t60"/>
     <child-task idref="t61"/>
+    <child-task idref="t109"/>
+    <child-task idref="t110"/>
     <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t56">
@@ -331,21 +338,21 @@
   </task>
   <task id="t59">
     <title>Définir tâches</title>
-    <effort>144000</effort>
+    <effort>244800</effort>
     <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
     <assignment idref="r2"/>
     <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t60">
     <title>Répartir tâches</title>
-    <effort>144000</effort>
+    <effort>244800</effort>
     <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
     <assignment idref="r2"/>
     <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
   </task>
   <task id="t61">
     <title>Mettre à jour documents</title>
-    <effort>144000</effort>
+    <effort>244800</effort>
     <start-constraint-date>2019-03-29T15:45:00.000Z</start-constraint-date>
     <assignment idref="r2"/>
     <start-no-earlier-than>2019-03-29T15:45:00.000Z</start-no-earlier-than>
@@ -456,6 +463,233 @@
     <start-constraint-date>2019-03-28T12:00:00.000Z</start-constraint-date>
     <assignment idref="r5"/>
     <start-no-earlier-than>2019-03-28T12:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t93">
+    <title>Dépot 3</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t95"/>
+    <child-task idref="t100"/>
+    <child-task idref="t104"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t95">
+    <title>Vue 1</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t97"/>
+    <child-task idref="t98"/>
+    <child-task idref="t99"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t97">
+    <title>Récupérations données NMEA</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t98">
+    <title>Tracé du trajet à partir des données NMEA</title>
+    <effort>57600</effort>
+    <start-constraint-date>2019-04-08T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <start-no-earlier-than>2019-04-08T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t99">
+    <title>Affichage de la vitesse</title>
+    <effort>43200</effort>
+    <start-constraint-date>2019-04-10T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r3"/>
+    <start-no-earlier-than>2019-04-10T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t100">
+    <title>Vue 2</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t101"/>
+    <child-task idref="t102"/>
+    <child-task idref="t103"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t101">
+    <title>Accéléromètre</title>
+    <effort>115200</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t102">
+    <title>Infos sur la vitesse et les coordonnées actuelles du drone</title>
+    <effort>57600</effort>
+    <start-constraint-date>2019-04-05T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-04-05T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t103">
+    <title>Tracé en direct en fonction des coordonnées changées par l’accéléromètre</title>
+    <effort>72000</effort>
+    <start-constraint-date>2019-04-09T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r6"/>
+    <start-no-earlier-than>2019-04-09T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t104">
+    <title>Vue 3</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t105"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t105">
+    <title>Afficher les données dans un fichier JSON ou en trames NMEA</title>
+    <effort>244800</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t106">
+    <title>Tracer trajectoire entre les waypoints</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-29T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-29T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t107">
+    <title>Bouton « Tracer le trajet »</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-29T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-29T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t108">
+    <title>Bouton « Nettoyer le trajet »</title>
+    <effort>28800</effort>
+    <start-constraint-date>2019-03-29T07:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <start-no-earlier-than>2019-03-29T07:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t109">
+    <title>Rapport final</title>
+    <effort>489600</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t110">
+    <title>Présentation finale</title>
+    <effort>489600</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r1"/>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t111">
+    <title>Dépot 3</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t113"/>
+    <child-task idref="t117"/>
+    <child-task idref="t122"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t113">
+    <title>Vue 1</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t114"/>
+    <child-task idref="t115"/>
+    <child-task idref="t116"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t114">
+    <title>Récupérations données NMEA</title>
+    <effort>144000</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r4"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t115">
+    <title>Tracé du trajet à partir des données NMEA</title>
+    <effort>57600</effort>
+    <start-constraint-date>2019-04-08T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r4"/>
+    <start-no-earlier-than>2019-04-08T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t116">
+    <title>Affichage de la vitesse</title>
+    <effort>43200</effort>
+    <start-constraint-date>2019-04-10T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r4"/>
+    <start-no-earlier-than>2019-04-10T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t117">
+    <title>Vue 2</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t118"/>
+    <child-task idref="t119"/>
+    <child-task idref="t120"/>
+    <child-task idref="t121"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t118">
+    <title>Boutons Home et Urgence</title>
+    <effort>57600</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r5"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t119">
+    <title>Accéléromètre</title>
+    <effort>86400</effort>
+    <start-constraint-date>2019-04-03T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r5"/>
+    <start-no-earlier-than>2019-04-03T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t120">
+    <title>Infos sur la vitesse et les coordonnées actuelles du drone</title>
+    <effort>43200</effort>
+    <start-constraint-date>2019-04-08T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r5"/>
+    <start-no-earlier-than>2019-04-08T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t121">
+    <title>Tracé en direct en fonction des coordonnées changées par l’accéléromètre</title>
+    <effort>57600</effort>
+    <start-constraint-date>2019-04-09T11:00:00.000Z</start-constraint-date>
+    <assignment idref="r5"/>
+    <start-no-earlier-than>2019-04-09T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t122">
+    <title>Vue 3</title>
+    <type>group</type>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <child-task idref="t123"/>
+    <child-task idref="t124"/>
+    <child-task idref="t125"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t123">
+    <title>Pouvoir positionner des waypoints et les afficher</title>
+    <effort>86400</effort>
+    <start-constraint-date>2019-04-01T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-01T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t124">
+    <title>Pouvoir positionner une vitesse entre chaque waypoints</title>
+    <effort>86400</effort>
+    <start-constraint-date>2019-04-04T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-04T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t125">
+    <title>Transmettre ces données dans un fichier JSON ou en trames NMEA</title>
+    <effort>72000</effort>
+    <start-constraint-date>2019-04-09T06:00:00.000Z</start-constraint-date>
+    <assignment idref="r2"/>
+    <start-no-earlier-than>2019-04-09T06:00:00.000Z</start-no-earlier-than>
   </task>
   <critical-path root="-1" enabled="false" resources="false">
     <color space="srgb" r="1" g="0.5" b="0.5"/>

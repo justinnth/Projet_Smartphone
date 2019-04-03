@@ -7,15 +7,15 @@
     <status-display>basic</status-display>
     <task-view>
       <split-view-divider-position>381</split-view-divider-position>
-      <outline x="0" y="26.5" w="381" h="984">
+      <outline x="0" y="1473" w="381" h="984">
         <column name="Violations" width="20"/>
         <column name="Notes" width="20"/>
         <column name="Title" width="266"/>
         <column name="Effort" width="70"/>
-        <expanded-items idrefs="t33 t69 t70 t53 t27 t73 t1 t51 t34 t48 t2 t54 t68 t10"/>
-        <selected-items-at-filter-time idrefs="t58 t77 t45 t13 t8 t83 t51 t59 t9 t78 t46 t27 t70 t14 t84 t33 t79 t47 t34 t85 t53 t48 t54 t73 t41 t60 t68 t36 t23 t74 t42 t10 t61 t69 t37 t80 t56 t2 t43 t38 t81 t57 t5 t44 t6 t82 t7"/>
+        <expanded-items idrefs="t54 t9 t1 t113 t34 t2 t68 t122 t100 t111 t51 t27 t93 t10 t48 t69 t73 t53 t117 t95 t70 t33 t104"/>
+        <selected-items-at-filter-time idrefs="t73 t81 t58 t109 t74 t82 t59 t121 t90 t110 t83 t68 t91 t84 t122 t92 t69 t77 t111 t10 t85 t93 t100 t78 t86 t123 t94 t79 t87 t95 t101 t13 t124 t88 t96 t113 t14 t89 t97 t102 t125 t23 t98 t114 t99 t103 t115 t33 t41 t104 t34 t42 t27 t116 t43 t105 t51 t36 t44 t117 t60 t37 t45 t106 t53 t2 t38 t61 t46 t118 t54 t107 t47 t70 t5 t6 t48 t119 t7 t56 t8 t108 t9 t57 t80 t120"/>
       </outline>
-      <gantt-view x="78.5" y="26.5" w="1297" h="984">
+      <gantt-view x="322" y="1473" w="1297" h="984">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>
@@ -136,7 +136,7 @@ End:</group-table-style>
     </network-view>
   </window>
   <project>
-    <next-task-id>86</next-task-id>
+    <next-task-id>126</next-task-id>
     <next-resource-id>7</next-resource-id>
     <scenario id="g6wcmY80Mg5" name="Actual" filename="Actual.xml"/>
     <date-display dates="true" times="true" seconds="false"/>
