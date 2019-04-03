@@ -1,0 +1,11 @@
+NOTER ANDROID (JAVA) ET IOS (OBJECTIVE-C (ET SWIFT ??))   
+
+Android
+    ◦ Dans les 3 vues : Map + 2 boutons d’accès aux autres vues
+		Fragment (mapview)
+    ◦ Boutons HOME et URGENCE : lors de l’appui, affichent des Toasts
+    ◦ Positionner des waypoints, les afficher et tracer le trajet
+
+iOs
+    ◦ Dans les 3 vues : Map + 2 boutons d’accès aux autres vues
+    ◦ Boutons HOME et URGENCE : affichage seulement

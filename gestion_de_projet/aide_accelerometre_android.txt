@@ -1,0 +1,32 @@
+public class hello extends Activity {
+	private capteur accelerometre;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		String txt = new String();
+		TextView tv = new TextView(this);
+		accelerometre = new capteur();
+		super.onCreate(savedInstanceState);        
+
+        SensorManager m = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+        m.registerListener(accelerometre, SensorManager.SENSOR_ACCELEROMETER);
+
+        txt = « X : «  + accelerometre.x;
+        txt = txt + « \nY : «  + accelerometre.y;
+        txt = txt + « \nZ : «  + accelerometre.z;
+
+        tv.setText(txt);
+        setContentView(tv);
+    }
+}
+
+class capteur implements SensorListener{
+    float x, y, z;
+
+    public void onSensorChanged(int sensor, float[] values) {
+        x = values[0];
+        y = values[1];
+        z = values[2];
+    }
+};
