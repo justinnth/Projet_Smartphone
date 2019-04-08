@@ -101,6 +101,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
      * du nouvel attribut this.location
      */
     private void updateLocation() {
+        gmap.clear();
         gmap.addMarker(new MarkerOptions().position(location));
     }
 
@@ -114,8 +115,9 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onSensorChanged(SensorEvent event) {
-        double tolerance = 1;
-        double deplacement = 0.0001;
+        double tolerance = 1;   // valeur de tolérance pour ne pas prendre en compte les micros-déplacements
+
+        double deplacement = 0.0003;    // valeur qui sera ajouté à la longitude ou à la latitude pour effectuer le déplacement
 
         LatLng newLoc = this.location;
         double newX = event.values[0];
@@ -123,10 +125,10 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         if(Math.abs( this.xOrigin - newX ) > tolerance) {
             if(newX > this.xOrigin) {
-                newLoc = new LatLng(this.location.longitude-deplacement,this.location.latitude);
+                newLoc = new LatLng(this.location.longitude - deplacement,this.location.latitude);  // RECULE
             }
             else {
-                newLoc = new LatLng(this.location.longitude+deplacement,this.location.latitude);
+                newLoc = new LatLng(this.location.longitude + deplacement,this.location.latitude);  // AVANCE
             }
         }
 
@@ -134,15 +136,15 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         if(Math.abs( this.yOrigin - newY ) > tolerance) {
             if(newY > this.yOrigin) {
-                newLoc = new LatLng(this.location.longitude-deplacement,this.location.latitude);
+                newLoc = new LatLng(this.location.longitude,this.location.latitude + deplacement);  // DROITE
             }
             else {
-                newLoc = new LatLng(this.location.longitude+deplacement,this.location.latitude);
+                newLoc = new LatLng(this.location.longitude,this.location.latitude - deplacement);  // GAUCHE
             }
         }
 
         this.location = newLoc;
-        updateLocation();
+        updateLocation(); // mise à jour de la position du marker
 
     }
 
