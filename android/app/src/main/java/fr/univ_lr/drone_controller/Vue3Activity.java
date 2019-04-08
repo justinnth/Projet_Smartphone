@@ -87,7 +87,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     /**
      * Ajoute 'point' dans l'ArrayList de points, et change le texte du TextView, affichant les coordonnées du nouveau point.
-     * @param point
+     * @param point, le point à ajouter dans l'ArrayList de waypoints
      */
     private void addPoint(LatLng point) {
         this.waypoints.add(point);
@@ -124,9 +124,9 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     /**
      * Transforme les waypoints de l'utilisateur par des trames NMEA
-     * @// TODO: 01/04/2019 CRC invalide, voir pourquoi.
-     * @// TODO: 01/04/2019 Coordonnées après transformation incorrectes, mauvais emplacement.
-     * @// TODO: 01/04/2019 Exportation des données vers le simulateur NMEA 
+     * TODO: 01/04/2019 CRC invalide, voir pourquoi.
+     * TODO: 01/04/2019 Coordonnées après transformation incorrectes, mauvais emplacement.
+     * TODO: 01/04/2019 Exportation des données vers le simulateur NMEA
      */
     private void transformIntoNMEA() {
 
@@ -162,7 +162,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
     /**
      * Génère un code hexadecimal qui validera la trame NMEA
      * @param in La chaîne de caractères à valider en CRC
-     * @return
+     * @return String sous forme hexadécimale
      */
     private static String getChecksum(String in) {
         int checksum = 0;
@@ -182,11 +182,11 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
     /**
      * Transforme des coordonnées sous format latitude/longitude en format DMS
      * Exemple : 40.7600000,-73.984000040°      --->     45' 36.000" N  73° 59' 2.400" W
-     * @param coord
+     * @param coord, les coordonnées à convertir en format DMS
      * @return
-     * @// TODO: 01/04/2019 Commenter d'avantage cette fonction
+     * TODO: 01/04/2019 Commenter d'avantage cette fonction
      */
-    public static String convertIntoDMS(double coord) {
+    private static String convertIntoDMS(double coord) {
 
         coord = Math.abs(coord); // SECURITE
 
@@ -207,12 +207,10 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
         // minutes en string
         String partieDecimalePostCalcul = Double.toString(coordDecimal2); // partieDecimalePostCalcul en minutes
 
-        StringBuilder sb = new StringBuilder();
-        sb.append(partieDecimalePostCalcul.charAt(2));
-        sb.append(partieDecimalePostCalcul.charAt(3));
-        sb.append(partieDecimalePostCalcul.charAt(4));
-        sb.append(partieDecimalePostCalcul.charAt(5));
-        String mmmm = sb.toString();
+        String mmmm = String.valueOf(partieDecimalePostCalcul.charAt(2)) +
+                partieDecimalePostCalcul.charAt(3) +
+                partieDecimalePostCalcul.charAt(4) +
+                partieDecimalePostCalcul.charAt(5);
 
         String partieEntierePostCalcul;
 
