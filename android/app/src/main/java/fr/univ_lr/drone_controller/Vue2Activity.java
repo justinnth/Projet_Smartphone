@@ -9,7 +9,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,14 +17,13 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallback, SensorEventListener {
 
-    private Button toView1, toView3, home, urgence;
     private GoogleMap gmap;
-    private SensorManager sensorManager;
-    private Sensor sensor;
+    private double xOrigin,yOrigin;
+    private LatLng location;
 
 
     @Override
@@ -34,16 +32,19 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_vue2);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        this.toView1 = (Button) findViewById(R.id.toView1);
-        this.toView3 = (Button) findViewById(R.id.toView3);
-        this.home = (Button) findViewById(R.id.buttonHome);
-        this.urgence = (Button) findViewById(R.id.buttonEmergency);
+        Button toView1 = (Button) findViewById(R.id.toView1);
+        Button toView3 = (Button) findViewById(R.id.toView3);
+        Button home = (Button) findViewById(R.id.buttonHome);
+        Button urgence = (Button) findViewById(R.id.buttonEmergency);
+
+        this.xOrigin = 7.2;
+        this.yOrigin = -0.35;
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView2);
 
         mapFragment.getMapAsync(this);
 
-        this.toView1.setOnClickListener(new View.OnClickListener() {
+        toView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Vue2Activity.this, Vue1Activity.class);
@@ -52,7 +53,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        this.toView3.setOnClickListener(new View.OnClickListener() {
+        toView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Vue2Activity.this, Vue3Activity.class);
@@ -61,24 +62,20 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
-        this.home.setOnClickListener(new View.OnClickListener() {
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Home button pushed", Toast.LENGTH_SHORT); toast.show();
             }
         });
 
-        this.urgence.setOnClickListener(new View.OnClickListener() {
+        urgence.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Emergency button pushed", Toast.LENGTH_SHORT); toast.show();
             }
         });
 
-        // Gestionnaire de capteurs, dans ce cas si, l'Acceleromètre
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -87,17 +84,66 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng loc = new LatLng(46.1481759,-1.1694211);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
+
+        this.location = loc;
+        gmap.addMarker(new MarkerOptions().position(this.location));
+
+        // Gestionnaire de capteurs, dans ce cas si, l'Acceleromètre
+        SensorManager sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        assert sensorManager != null;
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+
+    }
+
+    /**
+     * Fonction appelée à la fin du traitement du capteur afin de modifier la position du drone sur la carte en fonction
+     * du nouvel attribut this.location
+     */
+    private void updateLocation() {
+        gmap.addMarker(new MarkerOptions().position(location));
     }
 
     /**
      * Fonction appelée lors d'un changement détecté sur les capteurs
-     * @param event
-     * @// TODO: 01/04/2019 Gestion du déplacement du drone suite à la rotation
+     * @param event contient les coordonnées à la suite du changement sur le capteur
+     *              event.values[0] > axe X
+     *              event.values[1] > axe Y
+     *
+     * TODO: 08/04/2019 Amélioration du déplacement suite à la rotation
      */
     @Override
     public void onSensorChanged(SensorEvent event) {
-        Log.d("Axis x",String.valueOf(event.values[0]));
-        Log.d("Axis y",String.valueOf(event.values[1]));
+        double tolerance = 1;
+        double deplacement = 0.0001;
+
+        LatLng newLoc = this.location;
+        double newX = event.values[0];
+        double newY = event.values[1];
+
+        if(Math.abs( this.xOrigin - newX ) > tolerance) {
+            if(newX > this.xOrigin) {
+                newLoc = new LatLng(this.location.longitude-deplacement,this.location.latitude);
+            }
+            else {
+                newLoc = new LatLng(this.location.longitude+deplacement,this.location.latitude);
+            }
+        }
+
+        this.location = newLoc;
+
+        if(Math.abs( this.yOrigin - newY ) > tolerance) {
+            if(newY > this.yOrigin) {
+                newLoc = new LatLng(this.location.longitude-deplacement,this.location.latitude);
+            }
+            else {
+                newLoc = new LatLng(this.location.longitude+deplacement,this.location.latitude);
+            }
+        }
+
+        this.location = newLoc;
+        updateLocation();
+
     }
 
     @Override
