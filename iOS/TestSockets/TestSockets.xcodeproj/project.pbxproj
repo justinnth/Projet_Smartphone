@@ -17,6 +17,7 @@
 		8C58E66B2251EB88004443F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C58E66A2251EB88004443F0 /* CoreGraphics.framework */; };
 		8C58E66D2251EB90004443F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C58E66C2251EB90004443F0 /* UIKit.framework */; };
 		8C58E66F2251EB97004443F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C58E66E2251EB97004443F0 /* Foundation.framework */; };
+		8CD9D806225B2B32000F915E /* Vue2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD9D805225B2B32000F915E /* Vue2Controller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		8C58E66A2251EB88004443F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8C58E66C2251EB90004443F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8C58E66E2251EB97004443F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8CD9D804225B2B1C000F915E /* Vue2Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vue2Controller.h; sourceTree = "<group>"; };
+		8CD9D805225B2B32000F915E /* Vue2Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vue2Controller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 		8C58E6502251E28C004443F0 /* TestSockets */ = {
 			isa = PBXGroup;
 			children = (
+				8CD9D804225B2B1C000F915E /* Vue2Controller.h */,
+				8CD9D805225B2B32000F915E /* Vue2Controller.m */,
 				8C58E6512251E28C004443F0 /* AppDelegate.h */,
 				8C58E6522251E28C004443F0 /* AppDelegate.m */,
 				8C58E6542251E28C004443F0 /* ViewController.h */,
@@ -166,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C58E6562251E28C004443F0 /* ViewController.m in Sources */,
+				8CD9D806225B2B32000F915E /* Vue2Controller.m in Sources */,
 				8C58E6612251E28E004443F0 /* main.m in Sources */,
 				8C58E6532251E28C004443F0 /* AppDelegate.m in Sources */,
 			);

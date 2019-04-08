@@ -16,17 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self connectToServer];
+    
+    routeLocations = [[NSMutableArray alloc] init]; // Tableau pour stocker les NSDictionnary qui contiendront les coordonnées
+    [self connectToServer]; // Connexion au serveur NMEA Simulator
 }
 
 - (void) connectToServer{
     NSLog(@"Connexion à 10.13.69.216:55555");
-    CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef) @"10.13.69.216", 55555, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef) @"10.13.69.216", 55555, &readStream, &writeStream); // Création de la connexion au socket
     
-    messages = [[NSMutableArray alloc] init];
+    messages = [[NSMutableArray alloc] init]; // Tableau pour stocker les données NMEA
     
-    [self open];
+    [self open]; // Ouverture du stream pour la connexion au serveur
 }
 
 - (void) messageReceived:(NSString *)message {
@@ -34,55 +35,67 @@
     [messages addObject:message];
     
     if (![message hasPrefix:@"Simulator"]) {
-        NSArray *dataArray = [message componentsSeparatedByString:@"\n"];
-        NSArray *GPRMC = [dataArray[0] componentsSeparatedByString:@","];
+        NSArray *dataArray = [message componentsSeparatedByString:@"\n"]; // Récupération des données et séparation par \n
+        NSArray *GPRMC = [dataArray[0] componentsSeparatedByString:@","]; // On a donc la trame GPRMC des données NMEA, on les sépare par la virgule
         
         NSString *valide = GPRMC[2];
+        /**
+         * Si les données sont valides
+         */
         if ([valide isEqualToString:@"A"]) {
-            NSString *lat = GPRMC[3]; // String contenant les données de la latitude au format ddmm.mmmm
+            NSString *latT = GPRMC[3]; // String contenant les données de la latitude au format ddmm.mmmm
             
-            NSArray *latData = [lat componentsSeparatedByString:@"."]; // Séparation par le point
+            NSArray *latData = [latT componentsSeparatedByString:@"."]; // Séparation par le point
             NSString *dm = latData[0];
             NSString *d = [dm substringToIndex:2];
             NSString *m = [dm substringFromIndex:2];
             NSString *s = latData[1];
             
-            float latF = [d floatValue] + ([m floatValue]/60) + (([s floatValue]*60/100)/3600); // Calcul de la valeur de la latitude pour la map
+            float latF = [d floatValue] + ([m floatValue]/60) + (([s floatValue]*60/100)/3600); // Calcul de la valeur de la latitude en DD pour la map
             
-            NSString *sLat = GPRMC[4];
+            NSString *sLat = GPRMC[4]; // Récupération de N ou S pour le -
             if ([sLat isEqualToString:@"S"])
                 latF = -latF;
             
-            NSString *lng = GPRMC[5]; // String contenant les données de la longitude au format dddmm.mmmm
+            NSString *lngT = GPRMC[5]; // String contenant les données de la longitude au format dddmm.mmmm
             
-            NSArray *lngData = [lng componentsSeparatedByString:@"."];
+            NSArray *lngData = [lngT componentsSeparatedByString:@"."]; // Séparation par le point
             NSString *dm2 = lngData[0];
             NSString *d2 = [dm2 substringToIndex:3];
             NSString *m2 = [dm2 substringFromIndex:3];
             NSString *s2 = lngData[1];
             
-            float lngF = [d2 floatValue] + ([m2 floatValue]/60) + (([s2 floatValue]*60/100)/3600); // Calcul de la valeur de la longitude pour la map
+            float lngF = [d2 floatValue] + ([m2 floatValue]/60) + (([s2 floatValue]*60/100)/3600); // Calcul de la valeur de la longitude en DD pour la map
             
-            NSString *sLng = GPRMC[6];
-            
+            NSString *sLng = GPRMC[6]; // Récupération de E ou W pour le -
             if ([sLng isEqualToString:@"W"])
                 lngF = -lngF;
             
-            _coordonnees.text = [NSString stringWithFormat:@"Latitude : %f\nLongitude : %f", latF, lngF];
+            _coordonnees.text = [NSString stringWithFormat:@"Latitude : %f\nLongitude : %f", latF, lngF]; // Affichages des coordonnées dans la text view
             
             /**
-             * Ajout de point à chaque coordonnées
+             * Conversion en NSNumber pour utiliser le NSDictionary pour les lignes
              */
-            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(latF, lngF), 800, 800);
-            [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+            NSNumber *lat = [NSNumber numberWithFloat:latF];
+            NSNumber *lng = [NSNumber numberWithFloat:lngF];
             
-            MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-            point.coordinate = CLLocationCoordinate2DMake(latF, lngF);
+            NSDictionary *coordonnees = @{ @"lat" : lat, @"lon" : lng }; // Création du NSDictionary
+
+            [routeLocations addObject:coordonnees]; // Ajout des coordonnées dans le tableau
             
-            [self.mapView addAnnotation:point];
             
-            MKRoute *route;
-            [self.mapView addOverlay:[route polyline] level:MKOverlayLevelAboveRoads];
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(latF, lngF), 200, 200);
+            [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES]; // Placement de la caméra sur le point en cours
+            
+            CLLocationCoordinate2D routeCoord[routeLocations.count]; // Création d'un tableau de CLLocationCoordiante2D
+            for (int i = 0; i < routeLocations.count; i++) {
+                id location = [routeLocations objectAtIndex:i];
+                routeCoord[i] = CLLocationCoordinate2DMake([[location objectForKey:@"lat"] floatValue], [[location objectForKey:@"lon"] floatValue]); // Remplissage du tableau
+            }
+            
+            MKPolyline *poly = [MKPolyline polylineWithCoordinates:routeCoord count:routeLocations.count];
+            [self.mapView addOverlay:poly]; // Création des lignes
+            _mapView.delegate = self;
             
             /**
              * Vitesse
@@ -90,7 +103,7 @@
             NSString *vitesse = GPRMC[7];
             float v = [vitesse intValue]*4.98/2.69;
             
-            _vitesse.text = [NSString stringWithFormat:@"Vitesse : %.02f km/h", v];
+            _vitesse.text = [NSString stringWithFormat:@"Vitesse : %.02f km/h", v]; // Affichage de la vitesse dans la text view
         } else{
             _coordonnees.text = @"Données invalides";
         }
@@ -121,7 +134,7 @@
             break;
             
         case NSStreamEventHasSpaceAvailable:
-            NSLog(@"Stream has space available now");
+            NSLog(@"Stream possède de la place");
             break;
             
         case NSStreamEventErrorOccurred:
@@ -131,15 +144,18 @@
         case NSStreamEventEndEncountered:
             [aStream close];
             [aStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-            NSLog(@"close stream");
+            NSLog(@"Fermeture du stream");
             break;
             
         default:
-            NSLog(@"Unknown event");
+            NSLog(@"Evenement inconnu");
             break;
     }
 }
 
+/**
+ * Ouverture du stream pour la connexion au simulateur
+ */
 - (void) open{
     outputStream = (__bridge NSOutputStream *)writeStream;
     inputStream = (__bridge NSInputStream *)readStream;
@@ -152,6 +168,19 @@
     
     [outputStream open];
     [inputStream open];
+}
+
+/**
+ * Renderer pour les lignes entre les points
+ */
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolylineRenderer *routeRenderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
+        routeRenderer.strokeColor = [UIColor redColor];
+        routeRenderer.lineWidth = 4;
+        return routeRenderer;
+    }
+    return nil;
 }
 
 

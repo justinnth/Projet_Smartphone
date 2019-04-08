@@ -17,6 +17,8 @@
     NSOutputStream *outputStream;
     
     NSMutableArray *messages;
+    
+    NSMutableArray *routeLocations;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
