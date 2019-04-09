@@ -3,6 +3,8 @@ package fr.univ_lr.drone_controller;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,6 +18,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -102,9 +105,14 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
      * du nouvel attribut this.location
      */
     private void updateLocation(LatLng loc) {
+        BitmapDrawable bitmapdraw=(BitmapDrawable) getResources().getDrawable(R.drawable.boat);
+        Bitmap b=bitmapdraw.getBitmap();
+        Bitmap smallMarker = Bitmap.createScaledBitmap(b, 80, 80, false);
+
         this.location = loc;
         gmap.clear();
-        gmap.addMarker(new MarkerOptions().position(location));
+        gmap.addMarker(new MarkerOptions().position(location).icon(BitmapDescriptorFactory.fromBitmap(smallMarker)));
+
     }
 
     /**
