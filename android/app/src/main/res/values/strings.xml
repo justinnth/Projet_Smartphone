@@ -3,9 +3,9 @@
 
     <string name="api_key">AIzaSyBojukJ4iF-OHR0ptbbuUO7qpZvd1R-aa8</string>
 
-    <string name="toView1">Vue 1</string>
-    <string name="toView2">Vue 2</string>
-    <string name="toView3">Vue 3</string>
+    <string name="toView1">Simulation</string>
+    <string name="toView2">Pilotage</string>
+    <string name="toView3">Waypoints</string>
     
     <!-- VIEW 3 -->
     <string name="drawLines">Affiche le tracé</string>
