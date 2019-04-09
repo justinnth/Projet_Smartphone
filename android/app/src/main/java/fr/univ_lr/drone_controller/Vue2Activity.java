@@ -125,7 +125,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onSensorChanged(SensorEvent event) {
-        double tolerance = 1;   // valeur de tolérance pour ne pas prendre en compte les micros-déplacements
+        double tolerance = 1;   // valeur de tolérance pour ne pas prendre en compte les micros-mouvements du capteur
 
         double deplacement = 0.0003;    // valeur qui sera ajouté à la longitude ou à la latitude pour effectuer le déplacement
 
@@ -135,19 +135,19 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         if(Math.abs( this.xOrigin - newX ) > tolerance) {
             if(newX > this.xOrigin) {
-                newLoc = new LatLng(this.location.longitude - deplacement,this.location.latitude);  // RECULE
+                newLoc = new LatLng(newLoc.longitude - deplacement, newLoc.latitude);  // RECULE
             }
             else {
-                newLoc = new LatLng(this.location.longitude + deplacement,this.location.latitude);  // AVANCE
+                newLoc = new LatLng(newLoc.longitude + deplacement , newLoc.latitude);  // AVANCE
             }
         }
 
         if(Math.abs( this.yOrigin - newY ) > tolerance) {
             if(newY > this.yOrigin) {
-                newLoc = new LatLng(this.location.longitude,this.location.latitude + deplacement);  // DROITE
+                newLoc = new LatLng(newLoc.longitude,newLoc.latitude + deplacement);  // DROITE
             }
             else {
-                newLoc = new LatLng(this.location.longitude,this.location.latitude - deplacement);  // GAUCHE
+                newLoc = new LatLng(newLoc.longitude,newLoc.latitude - deplacement);  // GAUCHE
             }
         }
 
