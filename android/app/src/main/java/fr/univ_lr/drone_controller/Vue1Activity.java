@@ -2,8 +2,10 @@ package fr.univ_lr.drone_controller;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,6 +73,28 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng loc = new LatLng(46.1481759,-1.1694211);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
+        nmeaParse("trames.txt");
+    }
+
+    /**
+     *  Fonction qui parcourt un fichier contenant des trames.
+     *  A défaut de faire marcher le socket TCP, permet d'afficher un tracé tout de meme
+     * @param fileName le nom du fichier à parcourir
+     */
+    public void nmeaParse(String fileName) {
+        try {
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(getResources().openRawResource(R.raw.trames)));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Log.d("FILEREADER",line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
