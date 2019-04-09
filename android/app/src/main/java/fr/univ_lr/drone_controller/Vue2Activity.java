@@ -66,6 +66,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), "Home button pushed", Toast.LENGTH_SHORT); toast.show();
+                updateLocation(new LatLng(46.1481759,-1.1694211));
             }
         });
 
@@ -100,7 +101,8 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
      * Fonction appelée à la fin du traitement du capteur afin de modifier la position du drone sur la carte en fonction
      * du nouvel attribut this.location
      */
-    private void updateLocation() {
+    private void updateLocation(LatLng loc) {
+        this.location = loc;
         gmap.clear();
         gmap.addMarker(new MarkerOptions().position(location));
     }
@@ -132,8 +134,6 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
 
-        this.location = newLoc;
-
         if(Math.abs( this.yOrigin - newY ) > tolerance) {
             if(newY > this.yOrigin) {
                 newLoc = new LatLng(this.location.longitude,this.location.latitude + deplacement);  // DROITE
@@ -143,8 +143,7 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
 
-        this.location = newLoc;
-        updateLocation(); // mise à jour de la position du marker
+        updateLocation(newLoc); // mise à jour de la position du marker
 
     }
 
