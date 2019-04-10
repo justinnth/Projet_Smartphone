@@ -15,12 +15,14 @@
         <fragment
                 android:id="@+id/mapView3"
                 android:layout_width="match_parent"
-                android:layout_height="246dp"
+                android:layout_height="450dp"
                 class="com.google.android.gms.maps.SupportMapFragment" android:layout_weight="1"/>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" tools:layout_editor_absoluteY="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 tools:layout_editor_absoluteX="8dp">
             <Button
                     android:text="@string/toView1"
@@ -36,10 +38,14 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
                 android:layout_height="100dp" android:layout_weight="1">
             <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="20dp"
+                    android:layout_width="59dp"
                     android:layout_height="match_parent" android:layout_weight="1">
                 <TextView
                         android:layout_width="match_parent"
@@ -49,14 +55,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/textCoordsBoat" android:layout_weight="1"
                         android:text="Coords Boat"/>
-            </LinearLayout>
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_height="match_parent" android:layout_weight="1" android:layout_width="20dp">
-                <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/buttonTrace" android:layout_weight="1"
-                        android:text="@string/drawLines"/>
                 <Button
                         android:text="@string/clear"
                         android:layout_width="match_parent"
