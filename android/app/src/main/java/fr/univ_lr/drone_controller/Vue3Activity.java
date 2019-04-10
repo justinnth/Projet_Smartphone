@@ -96,6 +96,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
      * Puis lance la transformation de ces points en trames NMEA.
      */
     private void drawLines() {
+        this.gmap.clear();
         for (int i=0 ; i < this.waypoints.size() - 1 ; i++ ) {
             LatLng pt1 = this.waypoints.get(i);
             LatLng pt2 = this.waypoints.get(i+1);
@@ -146,7 +147,8 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
             String speed = "30";
             String sum = "E";
 
-            String trame = String.format("%s,%s,%s,%s,%s,%s,%s",time,lat,latIndic,lon,lonIndic,speed,sum);
+            String trame = String.format("%s,,%s,%s,%s,%s,%s,,100419,,%s",time,lat,latIndic,lon,lonIndic,speed,sum);
+            // 10 04 19 : date 10/04/2019
 
             trame = ("$") + type + "," + trame + ("*") + getChecksum(trame);
 
