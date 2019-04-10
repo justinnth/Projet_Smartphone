@@ -72,22 +72,21 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng loc = new LatLng(46.1481759,-1.1694211);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
-        nmeaParse("trames.txt");
+        nmeaParse();
     }
 
     /**
      *  Fonction qui parcourt un fichier contenant des trames.
      *  A défaut de faire marcher le socket TCP, permet d'afficher un tracé tout de meme
-     * @param fileName le nom du fichier à parcourir
      */
-    public void nmeaParse(String fileName) {
+    public void nmeaParse() {
         try {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(getResources().openRawResource(R.raw.trames)));
 
             String line;
             while ((line = reader.readLine()) != null) {
-                Log.d("FILEREADER",line);
+                Log.d("Trames",line);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
