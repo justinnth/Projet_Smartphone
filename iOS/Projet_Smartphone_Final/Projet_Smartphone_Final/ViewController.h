@@ -22,8 +22,9 @@
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UITextView *vitesse;
-@property (weak, nonatomic) IBOutlet UITextView *coordonnees;
+@property (weak, nonatomic) IBOutlet UILabel *vitesse;
+@property (weak, nonatomic) IBOutlet UILabel *latitude;
+@property (weak, nonatomic) IBOutlet UILabel *longitude;
 
 
 @end

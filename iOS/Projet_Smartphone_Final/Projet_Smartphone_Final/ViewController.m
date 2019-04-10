@@ -22,7 +22,7 @@
 }
 
 - (void) connectToServer{
-    printf(@"Connexion à 192.168.0.103:55555");
+    NSLog(@"Connexion à 192.168.0.103:55555");
     CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (__bridge CFStringRef) @"192.168.0.103", 55555, &readStream, &writeStream); // Création de la connexion au socket
     
     messages = [[NSMutableArray alloc] init]; // Tableau pour stocker les données NMEA
@@ -71,7 +71,8 @@
             if ([sLng isEqualToString:@"W"])
                 lngF = -lngF;
             
-            _coordonnees.text = [NSString stringWithFormat:@"Latitude : %f\nLongitude : %f", latF, lngF]; // Affichages des coordonnées dans la text view
+            _latitude.text = [NSString stringWithFormat:@"Latitude : %f", latF]; // Affichages des coordonnées dans la text view
+            _longitude.text = [NSString stringWithFormat:@"Longitude : %f", lngF];
             
             /**
              * Conversion en NSNumber pour utiliser le NSDictionary pour les lignes
@@ -103,9 +104,9 @@
             NSString *vitesse = GPRMC[7];
             float v = [vitesse intValue]*4.98/2.69;
             
-            _vitesse.text = [NSString stringWithFormat:@"Vitesse : %.02f km/h", v]; // Affichage de la vitesse dans la text view
+            _vitesse.text = [NSString stringWithFormat:@"%.02f km/h", v]; // Affichage de la vitesse dans la text view
         } else{
-            _coordonnees.text = @"Données invalides";
+            _latitude.text = @"Données invalides";
         }
     }
 }
@@ -141,7 +142,7 @@
             break;
             
         default:
-            printf(@"Evenement inconnu");
+            //NSLog(@"Evenement inconnu");
             break;
     }
 }
