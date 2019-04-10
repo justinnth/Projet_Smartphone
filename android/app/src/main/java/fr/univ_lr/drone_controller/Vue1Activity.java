@@ -5,10 +5,8 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
@@ -20,7 +18,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -75,7 +73,7 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
 
-        LatLng loc = new LatLng(46.160833,1.174722);
+        LatLng loc = new LatLng(46.1481759,-1.1694211);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
         nmeaParse();
     }
@@ -84,23 +82,17 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
      *  Fonction qui parcourt un fichier contenant des trames.
      *  A défaut de faire marcher le socket TCP, permet d'afficher un tracé tout de meme
      */
-    public void nmeaParse() {
+    private void nmeaParse() {
         try {
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(getResources().openRawResource(R.raw.trames)));
 
             String line;
-            int cpt = 0;
             ArrayList <LatLng> pts = new ArrayList<>();
 
             while ((line = reader.readLine()) != null) {
-
-                Log.d("Trames",line);
                 LatLng pt = convertIntoLatLong(line);
                 pts.add(pt);
-
-
-
             }
 
             if(pts.size() > 1) {
@@ -115,50 +107,54 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
                 }
                 gmap.addMarker(new MarkerOptions().position(pts.get(0)).title("Point de départ"));
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Convertit une trame NMEA en coordonnées latitude/longitude
+     * @param line La ligne du fichier de trames à decoder
+     * @return  Un objet LatLng contenant les coordonnées décodées depuis line
+     */
     private LatLng convertIntoLatLong(String line) {
-        StringBuilder sb;
 
-        sb = new StringBuilder();
-        double hour = Double.parseDouble(sb.append(line.charAt(7)).append(line.charAt(8)).toString());
-        sb = new StringBuilder();
-        double minutes = Double.parseDouble(sb.append(line.charAt(9)).append(line.charAt(10)).toString());
-        sb = new StringBuilder();
-        double secondes = Double.parseDouble(sb.append(line.charAt(12)).append(line.charAt(13)).toString());
+        String[] parts = line.split(",");
 
-        double lat = hour+(((minutes*60)+(secondes))/3600);
+        if (parts[2].equals("A")) {
+            String latDD = parts[3];
+            String[] latData = latDD.split(Pattern.quote("."));
+            String dm = latData[0];
+            String d = dm.substring(0,2);
+            String m = dm.substring(2,4);
+            String s = latData[1];
 
+            Double latF = Double.valueOf(d) + (Double.valueOf(m)/60) + ((Double.valueOf(s) * 60/100)/3600);
 
-        sb = new StringBuilder();
-        hour = Double.parseDouble(sb.append(line.charAt(18)).append(line.charAt(19)).toString());
-        sb = new StringBuilder();
-        minutes = Double.parseDouble(sb.append(line.charAt(20)).append(line.charAt(21)).toString());
-        sb = new StringBuilder();
-        secondes = Double.parseDouble(sb.append(line.charAt(23)).append(line.charAt(24)).toString());
+            if(parts[4].equals("S")) {
+                latF = -latF;
+            }
 
-        double lng = hour+(((minutes*60)+(secondes))/3600);
+            String lngDD = parts[5];
+            String[] lngData = lngDD.split(Pattern.quote("."));
+            String dm2 = lngData[0];
+            String d2 = dm2.substring(2,3);
+            String m2 = dm2.substring(3,5);
+            String s2 = lngData[1];
 
-        Log.d("debug","lat: "+lat + " lng : "+lng);
-        return new LatLng(lat,lng);
-    }
+            Double lngF = Double.valueOf(d2) + (Double.valueOf(m2)/60) + ((Double.valueOf(s2) * 60/100)/3600);
 
-    /*private void drawLines() {
-        /*for (int i=0 ; i < this.waypoints.size() - 1 ; i++ ) {
-            LatLng pt1 = this.waypoints.get(i);
-            LatLng pt2 = this.waypoints.get(i+1);
+            if(parts[6].equals("W")) {
+                lngF = -lngF;
+            }
 
-            this.gmap.addPolyline(new PolylineOptions()
-                    .add(pt1,pt2)
-                    .width(5)
-                    .color(Color.BLACK));
+            this.vitesse.setText("Vitesse : "+parts[7]+" km/h");
+
+            return new LatLng(latF,lngF);
         }
-    }*/
+        else return new LatLng(0,0);
+
+    }
 
     /**
      * @// TODO: 01/04/2019 Réussir à faire fonctionner le socket TCP
