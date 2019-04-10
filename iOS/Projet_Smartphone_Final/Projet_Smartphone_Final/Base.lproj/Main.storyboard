@@ -19,88 +19,73 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" translatesAutoresizingMaskIntoConstraints="NO" id="O8B-sE-IeP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
+                                <rect key="frame" x="5" y="44" width="365" height="594"/>
                             </mapView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="jI5-vt-0TR">
-                                <rect key="frame" x="16" y="662" width="343" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92D-A4-S1w">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Fjh-TP-CFs"/>
-                                            <constraint firstAttribute="width" constant="135" id="GSB-5E-jIr"/>
-                                        </constraints>
-                                        <state key="normal" title="Pilotage">
-                                            <color key="titleColor" red="1" green="0.025593399539999999" blue="0.042876051409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="qzH-LN-gkP" kind="show" id="BfZ-ku-vBR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEn-AD-lf2">
-                                        <rect key="frame" x="208" y="0.0" width="135" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="9F0-1a-pNr"/>
-                                            <constraint firstAttribute="height" constant="30" id="hTA-m2-dRp"/>
-                                        </constraints>
-                                        <state key="normal" title="Trajectoire">
-                                            <color key="titleColor" red="1" green="0.025593399539999999" blue="0.042876051409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="6pd-Iu-0Wk" kind="show" id="Zn5-ZO-6XJ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="VEn-AD-lf2" firstAttribute="height" secondItem="92D-A4-S1w" secondAttribute="height" id="6W0-3R-BGs"/>
-                                    <constraint firstItem="VEn-AD-lf2" firstAttribute="width" secondItem="92D-A4-S1w" secondAttribute="width" id="fBe-Of-ARd"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.77 km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i48-w7-vvs">
-                                <rect key="frame" x="16" y="700" width="137" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="137" id="057-rg-9Qt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <rect key="frame" x="21" y="700" width="145" height="78"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgs-9Y-okf">
-                                <rect key="frame" x="175" y="743" width="184" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEn-AD-lf2">
+                                <rect key="frame" x="190" y="646" width="176" height="47"/>
+                                <state key="normal" title="Trajectoire"/>
+                                <connections>
+                                    <segue destination="6pd-Iu-0Wk" kind="show" id="Zn5-ZO-6XJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92D-A4-S1w">
+                                <rect key="frame" x="5" y="646" width="177" height="47"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="4ob-br-EVQ"/>
+                                    <constraint firstAttribute="height" constant="47" id="wr2-fb-p6u"/>
+                                </constraints>
+                                <state key="normal" title="Pilotage"/>
+                                <connections>
+                                    <segue destination="qzH-LN-gkP" kind="show" id="BfZ-ku-vBR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lon : -123.488007" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgs-9Y-okf">
+                                <rect key="frame" x="204" y="742" width="148" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Gbs-7c-L5v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooW-2e-jsj">
-                                <rect key="frame" x="175" y="700" width="184" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat : -35.000000 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooW-2e-jsj">
+                                <rect key="frame" x="208" y="701" width="140" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="x41-UY-frN"/>
+                                    <constraint firstAttribute="height" constant="35" id="JjL-pu-KyL"/>
+                                    <constraint firstAttribute="width" constant="140" id="XUa-5H-08N"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="O8B-sE-IeP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="14x-WY-2zh"/>
-                            <constraint firstItem="tgs-9Y-okf" firstAttribute="top" secondItem="ooW-2e-jsj" secondAttribute="bottom" constant="8" symbolic="YES" id="6q0-GJ-RSC"/>
-                            <constraint firstItem="i48-w7-vvs" firstAttribute="bottom" secondItem="tgs-9Y-okf" secondAttribute="bottom" id="ApR-8f-g1O"/>
-                            <constraint firstItem="ooW-2e-jsj" firstAttribute="trailing" secondItem="tgs-9Y-okf" secondAttribute="trailing" id="DNP-0N-v4e"/>
-                            <constraint firstItem="ooW-2e-jsj" firstAttribute="leading" secondItem="tgs-9Y-okf" secondAttribute="leading" id="HQG-mM-Kd4"/>
-                            <constraint firstItem="jI5-vt-0TR" firstAttribute="leading" secondItem="i48-w7-vvs" secondAttribute="leading" id="Jtc-HS-LzW"/>
-                            <constraint firstItem="jI5-vt-0TR" firstAttribute="top" secondItem="O8B-sE-IeP" secondAttribute="bottom" constant="8" symbolic="YES" id="PZS-UC-30S"/>
-                            <constraint firstItem="i48-w7-vvs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="X03-pb-Fw2"/>
-                            <constraint firstItem="ooW-2e-jsj" firstAttribute="leading" secondItem="i48-w7-vvs" secondAttribute="trailing" constant="22" id="Z1V-dC-d28"/>
-                            <constraint firstItem="jI5-vt-0TR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cGf-ua-tk2"/>
-                            <constraint firstItem="i48-w7-vvs" firstAttribute="top" secondItem="jI5-vt-0TR" secondAttribute="bottom" constant="8" symbolic="YES" id="h78-Oa-oOr"/>
-                            <constraint firstItem="O8B-sE-IeP" firstAttribute="centerX" secondItem="jI5-vt-0TR" secondAttribute="centerX" id="o8I-nq-kB8"/>
-                            <constraint firstItem="i48-w7-vvs" firstAttribute="top" secondItem="ooW-2e-jsj" secondAttribute="top" id="plh-Xf-cqu"/>
-                            <constraint firstItem="O8B-sE-IeP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xJN-eb-fAn"/>
-                            <constraint firstItem="jI5-vt-0TR" firstAttribute="trailing" secondItem="ooW-2e-jsj" secondAttribute="trailing" id="zzq-td-TNU"/>
+                            <constraint firstItem="i48-w7-vvs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="0Ma-5B-iUT"/>
+                            <constraint firstItem="tgs-9Y-okf" firstAttribute="leading" secondItem="i48-w7-vvs" secondAttribute="trailing" constant="38" id="8fD-on-mX1"/>
+                            <constraint firstItem="ooW-2e-jsj" firstAttribute="centerX" secondItem="tgs-9Y-okf" secondAttribute="centerX" id="Ddd-C0-9i7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tgs-9Y-okf" secondAttribute="bottom" constant="1" id="E6k-KY-pDZ"/>
+                            <constraint firstItem="VEn-AD-lf2" firstAttribute="centerX" secondItem="ooW-2e-jsj" secondAttribute="centerX" id="J8U-iD-1tj"/>
+                            <constraint firstItem="O8B-sE-IeP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jb6-8n-scx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VEn-AD-lf2" secondAttribute="trailing" constant="9" id="L50-9g-QFg"/>
+                            <constraint firstItem="VEn-AD-lf2" firstAttribute="leading" secondItem="92D-A4-S1w" secondAttribute="trailing" constant="8" symbolic="YES" id="Qjf-77-Oie"/>
+                            <constraint firstItem="O8B-sE-IeP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QtU-vm-Sjr"/>
+                            <constraint firstItem="tgs-9Y-okf" firstAttribute="top" secondItem="ooW-2e-jsj" secondAttribute="bottom" constant="6" id="RIg-hv-x9X"/>
+                            <constraint firstItem="i48-w7-vvs" firstAttribute="top" secondItem="92D-A4-S1w" secondAttribute="bottom" constant="7" id="YU8-zA-0gR"/>
+                            <constraint firstItem="ooW-2e-jsj" firstAttribute="top" secondItem="VEn-AD-lf2" secondAttribute="bottom" constant="8" symbolic="YES" id="ZL7-sJ-LS3"/>
+                            <constraint firstItem="ooW-2e-jsj" firstAttribute="leading" secondItem="i48-w7-vvs" secondAttribute="trailing" constant="42" id="ba8-p1-LO0"/>
+                            <constraint firstItem="92D-A4-S1w" firstAttribute="top" secondItem="VEn-AD-lf2" secondAttribute="top" id="bvX-wa-6Dq"/>
+                            <constraint firstItem="92D-A4-S1w" firstAttribute="centerX" secondItem="i48-w7-vvs" secondAttribute="centerX" id="eLU-PU-oee"/>
+                            <constraint firstItem="92D-A4-S1w" firstAttribute="top" secondItem="O8B-sE-IeP" secondAttribute="bottom" constant="8" symbolic="YES" id="oac-Kq-nX7"/>
+                            <constraint firstItem="O8B-sE-IeP" firstAttribute="leading" secondItem="92D-A4-S1w" secondAttribute="leading" id="p0Z-3r-D0r"/>
+                            <constraint firstItem="92D-A4-S1w" firstAttribute="baseline" secondItem="VEn-AD-lf2" secondAttribute="firstBaseline" id="qaN-Wq-pjA"/>
+                            <constraint firstItem="i48-w7-vvs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="r04-GP-G0M"/>
+                            <constraint firstItem="O8B-sE-IeP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="xdx-7b-tMZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -319,8 +304,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zn5-ZO-6XJ"/>
-        <segue reference="BfZ-ku-vBR"/>
+        <segue reference="e9F-2U-vRh"/>
+        <segue reference="zfW-Xr-DMX"/>
         <segue reference="bZV-gX-7yb"/>
     </inferredMetricsTieBreakers>
 </document>

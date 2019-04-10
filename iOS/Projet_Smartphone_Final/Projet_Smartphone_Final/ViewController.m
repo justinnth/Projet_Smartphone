@@ -71,8 +71,8 @@
             if ([sLng isEqualToString:@"W"])
                 lngF = -lngF;
             
-            _latitude.text = [NSString stringWithFormat:@"Latitude : %f", latF]; // Affichages des coordonnées dans la text view
-            _longitude.text = [NSString stringWithFormat:@"Longitude : %f", lngF];
+            _latitude.text = [NSString stringWithFormat:@"Lat : %f", latF]; // Affichages des coordonnées dans la text view
+            _longitude.text = [NSString stringWithFormat:@"Lon : %f", lngF];
             
             /**
              * Conversion en NSNumber pour utiliser le NSDictionary pour les lignes

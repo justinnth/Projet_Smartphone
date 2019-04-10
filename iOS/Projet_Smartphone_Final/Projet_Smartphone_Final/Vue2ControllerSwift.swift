@@ -11,15 +11,20 @@ import UIKit
 import MapKit
 import CoreMotion
 
-@objc class Vue2ControllerSwift: UIViewController {
+@objc class Vue2ControllerSwift: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var home: UIButton!
     @IBOutlet weak var urgence: UIButton!
     
     var motionManager: CMMotionManager!
+    
     let homeLat = 46.147248
     let homeLon = -1.168250
+    
     let bateau = MKPointAnnotation()
+    
+    var coordonnees: Array<CLLocationCoordinate2D> = Array()
+    
     var vitesse = 0.0
     var barre = 0.0
     var angle = 0.0
@@ -37,21 +42,8 @@ import CoreMotion
         self.latBateau = self.homeLat
         self.lonBateau = self.homeLon
         
-        
         self.initPosition()
         self.startAccelerometre()
-    }
-    
-    override var shouldAutorotate: Bool{
-        return false
-    }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-        return UIInterfaceOrientationMask.landscapeLeft
-    }
-    
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
-        return UIInterfaceOrientation.landscapeLeft
     }
     
     func initPosition() {
@@ -141,7 +133,7 @@ import CoreMotion
     
     func updateAnnotation() {
         print("Deplacement")
-        let distanceParcourue = self.vitesse/0.2
+        let distanceParcourue = self.vitesse/0.08
         let diffX = sin(barre) * distanceParcourue * 1.0/120.0
         let diffY = cos(barre) * distanceParcourue * 1.0/120.0
         
@@ -151,56 +143,55 @@ import CoreMotion
         self.bateau.coordinate = CLLocationCoordinate2D(latitude: latBateau, longitude: lonBateau)
         let locationHome = CLLocationCoordinate2DMake(latBateau, lonBateau)
         self.mapView.setRegion(MKCoordinateRegion(center: locationHome, latitudinalMeters: 500, longitudinalMeters: 500), animated: false)
+        
+        let currentCoordinates = CLLocationCoordinate2DMake(latBateau, lonBateau)
+        self.coordonnees.append(currentCoordinates)
+        
+        let line = MKPolyline(coordinates: coordonnees, count: coordonnees.count)
+        self.mapView.addOverlay(line)
+        mapView.delegate = self
     }
     
-    func stop() {
-        print("Urgence")
+    // Permet de repositionner le marqueur au lieu de départ
+    @IBAction func onClick(_ sender: UIButton) {
+        self.initPosition()
+    }
+    
+    // Permet de stopper le drone sur place et de stopper l'accelerometre
+    @IBAction func onClickUrgence(_ sender: UIButton) {
         self.vitesse = 0
         self.updateAnnotation()
         self.motionManager.stopAccelerometerUpdates()
     }
     
-    @IBAction func onClick(_ sender: UIButton) {
-        self.initPosition()
-    }
-    
-    @IBAction func onClickUrgence(_ sender: UIButton) {
-        self.stop()
-    }
-    
+    // Stop l'accelerometre lorsque l'on change de vue
     @IBAction func stopAccelerometre(_ sender: UIButton) {
         self.motionManager.stopAccelerometerUpdates()
     }
     
-    /*func updateMap(){
-        
-        angleBoat = atan2(longitudeDrone - lastLong, latitudeDrone - lastLat)
-        
-        
-        
-        //Test la longueur du tableau pour supprimer le dernier élément et éviter de faire lagger la mapView
-        if(testCoords.count > 2055){
-            testCoords.removeFirst()
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let routeRenderer = MKPolylineRenderer(overlay: overlay)
+            routeRenderer.strokeColor = UIColor.red
+            routeRenderer.lineWidth = 4
+            return routeRenderer
         }
-        
-        //Supression des lignes à chaque update
-        for poll in mapView.overlays {
-            mapView.removeOverlay(poll)
-        }
-        
-        //Puis on les redessine les lignes
-        let currentCoordinate = CLLocationCoordinate2DMake(latitudeDrone, longitudeDrone);
-        
-        //Ajout des coordonnées du drone dans un tableau puis création des lignes
-        testCoords.append(currentCoordinate)
-        let line = MKPolyline(coordinates: testCoords, count: testCoords.count)
-        mapView.addOverlay(line)
-        mapView.delegate = self
-        
-        lastLat = latitudeDrone
-        lastLong = longitudeDrone
-        
-        
-    }*/
+        return MKOverlayRenderer()
+    }
+    
+    /**
+     * Fonctions permettant de forcer le passage en mode paysage pour controler le drone
+     */
+    override var shouldAutorotate: Bool{
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return UIInterfaceOrientationMask.landscapeLeft
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation{
+        return UIInterfaceOrientation.landscapeLeft
+    }
     
 }
