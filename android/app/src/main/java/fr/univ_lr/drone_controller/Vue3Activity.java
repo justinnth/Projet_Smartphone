@@ -119,9 +119,6 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     /**
      * Transforme les waypoints de l'utilisateur par des trames NMEA
-     * TODO: 01/04/2019 CRC invalide, voir pourquoi.
-     * TODO: 01/04/2019 Coordonnées après transformation incorrectes, mauvais emplacement.
-     * TODO: 01/04/2019 Exportation des données vers le simulateur NMEA
      */
     private void transformIntoNMEA() {
 
@@ -180,7 +177,6 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
      * Exemple : 40.7600000,-73.984000040°      --->     45' 36.000" N  73° 59' 2.400" W
      * @param coord, les coordonnées à convertir en format DMS
      * @return
-     * TODO: 01/04/2019 Commenter d'avantage cette fonction
      */
     private static String convertIntoDMS(double coord) {
 

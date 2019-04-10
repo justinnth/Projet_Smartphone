@@ -156,9 +156,6 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
 
     }
 
-    /**
-     * @// TODO: 01/04/2019 Réussir à faire fonctionner le socket TCP
-     */
     class ClientThread implements Runnable {
 
         @Override

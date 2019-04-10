@@ -120,8 +120,6 @@ public class Vue2Activity extends AppCompatActivity implements OnMapReadyCallbac
      * @param event contient les coordonnées à la suite du changement sur le capteur
      *              event.values[0] > axe X
      *              event.values[1] > axe Y
-     *
-     * TODO: 08/04/2019 Amélioration du déplacement suite à la rotation
      */
     @Override
     public void onSensorChanged(SensorEvent event) {
