@@ -87,7 +87,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
         this.waypoints.add(point);
         double longitude = point.longitude;
         double latitude = point.latitude;
-        this.ptCoords.setText(String.format("Longitude : %s\nLatitude : %s",longitude,latitude));
+        this.ptCoords.setText(String.format("Longitude :\n %s\nLatitude :\n %s",longitude,latitude));
         drawLines();
     }
 
