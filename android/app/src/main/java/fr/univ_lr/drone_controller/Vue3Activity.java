@@ -33,7 +33,6 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
         this.waypoints = new ArrayList<>();
         this.ptCoords = (TextView) findViewById(R.id.textCoordsPoint);
 
-        Button trace = (Button) findViewById(R.id.buttonTrace);
         Button clear = (Button) findViewById(R.id.buttonClear);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapView3);
@@ -55,14 +54,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
                 finish();
             }
         });
-
-        trace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawLines();
-            }
-        });
-
+        
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +88,7 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
         double longitude = point.longitude;
         double latitude = point.latitude;
         this.ptCoords.setText(String.format("Longitude : %s\nLatitude : %s",longitude,latitude));
+        drawLines();
     }
 
     /**
