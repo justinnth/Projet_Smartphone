@@ -96,7 +96,6 @@ public class Vue3Activity extends AppCompatActivity implements OnMapReadyCallbac
      * Puis lance la transformation de ces points en trames NMEA.
      */
     private void drawLines() {
-        this.gmap.clear();
         for (int i=0 ; i < this.waypoints.size() - 1 ; i++ ) {
             LatLng pt1 = this.waypoints.get(i);
             LatLng pt2 = this.waypoints.get(i+1);
