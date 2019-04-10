@@ -19,6 +19,7 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallback {
@@ -74,7 +75,7 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap map) {
         this.gmap = map;
 
-        LatLng loc = new LatLng(46.1481759,-1.1694211);
+        LatLng loc = new LatLng(46.160833,1.174722);
         this.gmap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
         nmeaParse();
     }
@@ -89,10 +90,30 @@ public class Vue1Activity extends AppCompatActivity implements OnMapReadyCallbac
                     new InputStreamReader(getResources().openRawResource(R.raw.trames)));
 
             String line;
+            int cpt = 0;
+            ArrayList <LatLng> pts = new ArrayList<>();
+
             while ((line = reader.readLine()) != null) {
+
                 Log.d("Trames",line);
                 LatLng pt = convertIntoLatLong(line);
-                gmap.addMarker(new MarkerOptions().position(pt));
+                pts.add(pt);
+
+
+
+            }
+
+            if(pts.size() > 1) {
+                for (int i=0 ; i < pts.size() - 1 ; i++ ) {
+                    LatLng pt1 = pts.get(i);
+                    LatLng pt2 = pts.get(i+1);
+
+                    this.gmap.addPolyline(new PolylineOptions()
+                            .add(pt1,pt2)
+                            .width(5)
+                            .color(Color.BLACK));
+                }
+                gmap.addMarker(new MarkerOptions().position(pts.get(0)).title("Point de départ"));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
